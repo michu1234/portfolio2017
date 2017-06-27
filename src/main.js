@@ -5,6 +5,7 @@ import Gallery from './components/Gallery'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import '../css/fontello.css'
+import '../css/style.css'
 import App from './App'
 import router from './router'
 

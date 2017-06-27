@@ -16,6 +16,30 @@
 					</v-list-tile>
 				</v-list-item>
 			</v-list>
+			<v-card height="555px" class="grey lighten-4" id="navigation-1">
+				<v-list dense>
+					<template v-for="(item, i) in items">
+						<v-layout row v-if="item.heading" align-center :key="i">
+							<v-flex xs6>
+								<v-subheader v-if="item.heading"> {{ item.heading }} </v-subheader>
+							</v-flex>
+							<v-flex xs6 class="text-xs-center"> </v-flex>
+						</v-layout>
+						<v-divider dark v-else-if="item.divider" class="my-4" :key="i"></v-divider>
+						<v-list-item :key="i" v-else>
+							<v-list-tile>
+								<v-list-tile-action>
+									<v-icon v-on:click="testowa">{{ item.icon }}</v-icon>
+								</v-list-tile-action>
+								<v-list-tile-content>
+									<v-list-tile-title> {{ item.text }} </v-list-tile-title>
+								</v-list-tile-content>
+							</v-list-tile>
+						</v-list-item>
+					</template>
+				</v-list>
+			</v-card>
+			<!--
 			<v-list class="pt-0" dense>
 				<v-divider></v-divider>
 				<v-list-item v-for="item in items" :key="item">
@@ -29,7 +53,7 @@
 					</v-list-tile>
 				</v-list-item>
 			</v-list>
-		</v-navigation-drawer>
+--></v-navigation-drawer>
 		<v-toolbar fixed class="grey darken-4" light>
 			<v-toolbar-side-icon light @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
 			<v-toolbar-title>DaveDev.De</v-toolbar-title>
@@ -67,17 +91,15 @@
 				<gallery></gallery>
 				<!--v-router-->
 			</v-container>
-			<v-footer class="pa-3 light-blue darken-4">
-				<contact></contact>
-				<v-spacer></v-spacer>
-				<div><small>powered by Vue.js | Dawid Nawrocki © {{ new Date().getFullYear() }}</small></div>
-			</v-footer>
 		</main>
+		<v-footer class="pa-3 light-blue darken-4">
+			<contact></contact>
+			<v-spacer></v-spacer>
+			<div><small>powered by Vue.js | Dawid Nawrocki © {{ new Date().getFullYear() }}</small></div>
+		</v-footer>
 	</v-app>
 </template>
-
 <!-- SCRIPT -->
-
 <script>
 	import Contact from './components/Contact.vue'
 	export default {
@@ -86,27 +108,64 @@
 		}
 		, data() {
 			return {
-				drawer: null
-				, items: [
+				onoff_preview: 0,
+				drawer: null,
+				items: [
 					{
-						title: 'Start'
-						, icon: 'dashboard'
+						heading: 'Apps'
 					}
 					, {
-						title: 'O mnie'
-						, icon: 'question_answer'
+						icon: 'lightbulb_outline'
+						, text: 'Informator'
 					}
 					, {
-						title: 'Contacts'
-						, icon: 'contacts'
+						icon: 'touch_app'
+						, text: 'ToDO'
 					}
 					, {
-						title: 'App downloads'
-						, icon: 'phonelink'
+						divider: true
 					}
 					, {
-						title: 'Got to the old version'
-						, icon: 'keyboard'
+						heading: 'Websites'
+					}
+					, {
+						icon: 'account_box'
+						, text: 'Dev Portfolio'
+					}
+					, {
+						icon: 'archive'
+						, text: 'Dental Clinic'
+					}
+					, {
+						icon: 'music_video'
+						, text: 'Sound Production ver. 1'
+					}
+					, {
+						icon: 'queue_music'
+						, text: 'Sound Production ver. 2'
+					}
+					, {
+						divider: true
+					}
+					, {
+						icon: 'chat_bubble'
+						, text: 'Economini'
+					}
+					, {
+						icon: 'filter_vintage'
+						, text: 'Garden Portfolio'
+					}
+					, {
+						icon: 'assessment'
+						, text: 'Marketing'
+					}
+					, {
+						icon: 'play_circle_outline'
+						, text: 'Outdoor cinema'
+					}
+					, {
+						icon: 'format_paint'
+						, text: 'Farba Śnieżka'
 					}
 				]
 				, mini: false
@@ -137,12 +196,49 @@
 					}
 				]
 			}
+		},
+		methods: {
+			testowa: function(e){
+				switch (e.target.textContent) {
+					case "lightbulb_outline":
+						this.onoff_preview = 1
+						break;
+					case "touch_app":
+						this.onoff_preview = 2
+						break;
+					case "account_box":
+						this.onoff_preview = 3
+						break;
+					case "archive":
+						this.onoff_preview = 4
+						break;
+					case "music_video":
+						this.onoff_preview = 5
+						break;
+					case "queue_music":
+						this.onoff_preview = 6
+						break;
+					case "chat_bubble":
+						this.onoff_preview = 7
+						break;
+					case "filter_vintage":
+						this.onoff_preview = 8
+						break;
+					case "assessment":
+						this.onoff_preview = 9
+						break;
+					case "play_circle_outline":
+						this.onoff_preview = 10
+						break;
+					case "format_paint":
+						this.onoff_preview = 11
+						break;
+        }
+			}
 		}
 	}
 </script>
-
 <!-- CSS -->
-
 <style scoped>
 	#example-2 {
 		background: #235ba5;
@@ -156,5 +252,10 @@
 		background-position: 1% 50%, 50% 50%;
 		background-size: cover;
 		background-size: contain, cover;
+		overflow: hidden;
+	}
+
+	#navigation-1 a {
+		text-decoration: none;
 	}
 </style>
