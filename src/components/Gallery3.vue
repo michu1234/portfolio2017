@@ -1,12 +1,12 @@
 <template>
 <div class="gallery">
 
-<!--	PORTFOLIO  -->
+	<!--	PORTFOLIO  -->
 
-	<v-card v-if="onoff == 1">
-		<v-card-row class="light-blue darken-2" light>
+	<v-card v-if="onoff3 == 3">
+		<v-card-row class="pink darken-4" light>
 			<v-card-title>
-				<span class="white--text">Informator App</span>
+				<span class="white--text">Web Developer Portfolio</span>
 				<v-spacer></v-spacer>
 				<v-menu id="space" bottom left origin="top right" transition="v-scale-transition">
 					<v-btn icon="icon" slot="activator" class="white--text">
@@ -27,14 +27,14 @@
 	</v-menu>
 	</v-card-title>
 	</v-card-row>
-		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/info.jpg" height="350px"></v-card-row>
-		<v-card-text class="light-blue darken-2 white--text">
+		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/portfolio.jpg" height="350px"></v-card-row>
+		<v-card-text class="pink darken-1 darken-4 white--text">
 			<div v-text="card_text"></div>
 			<div v-text="divider"></div>
 			<div v-text="technologies"></div>
 	</v-card-text>
-		<v-card-row actions class="cyan darken-1 mt-0">
-			<a href="http://info.davedeveloper.eu" target="_blank"><v-btn flat class="white--text"><v-icon>input</v-icon>&nbsp; DEMO</v-btn></a>
+		<v-card-row actions class="pink darken-3darken-1 mt-0">
+			<a href="http://dave.davedeveloper.eu" target="_blank"><v-btn flat class="white--text"><v-icon>input</v-icon>&nbsp; DEMO</v-btn></a>
 			<v-spacer></v-spacer>
 			<v-btn icon>
 				<v-icon class="white--text">explore</v-icon>
@@ -50,18 +50,18 @@
 
 <script>
 	export default {
-		props: ['onoff'],
+		props: ['onoff3'],
 		data () {
 			return {
-				card_text: 'Aplikacja wykorzystująca publiczne API, na podstawie którego wyszukuje informacje na temat polskich firm: adres, nazwa firmy, numery KRS, REGON oraz NIP.',
+				card_text: 'Portfolio web developera, zawierające listę projektów oraz dane kontaktowe. W tle strony umieszczono dwa rodzaje animacji wykonanych przy pomocy biblioteki P5.js.',
 				divider: '-----------------------',
-				technologies: 'Technologie: HTML5, CSS3, JavaScript, Vue.js, AJAX'
+				technologies: 'Technologie: HTML5, CSS3, jQuery, P5.js'
 			}
 		},
 		methods: {
 			testowa122: function() {
-			this.onoff = 0;
-		}
+				this.onoff2 = 0;
+			}
 		}
 	}
 </script>

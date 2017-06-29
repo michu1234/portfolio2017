@@ -1,12 +1,12 @@
 <template>
 <div class="gallery">
 
-<!--	PORTFOLIO  -->
+	<!--	PORTFOLIO  -->
 
-	<v-card v-if="onoff == 1">
-		<v-card-row class="light-blue darken-2" light>
+	<v-card v-if="onoff5 == 5">
+		<v-card-row class="amber darken-3" light>
 			<v-card-title>
-				<span class="white--text">Informator App</span>
+				<span class="white--text">Sound Production ver. 1</span>
 				<v-spacer></v-spacer>
 				<v-menu id="space" bottom left origin="top right" transition="v-scale-transition">
 					<v-btn icon="icon" slot="activator" class="white--text">
@@ -27,14 +27,12 @@
 	</v-menu>
 	</v-card-title>
 	</v-card-row>
-		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/info.jpg" height="350px"></v-card-row>
-		<v-card-text class="light-blue darken-2 white--text">
+		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/music.jpg" height="350px"></v-card-row>
+		<v-card-text class="amber darken-3 white--text">
 			<div v-text="card_text"></div>
-			<div v-text="divider"></div>
-			<div v-text="technologies"></div>
 	</v-card-text>
-		<v-card-row actions class="cyan darken-1 mt-0">
-			<a href="http://info.davedeveloper.eu" target="_blank"><v-btn flat class="white--text"><v-icon>input</v-icon>&nbsp; DEMO</v-btn></a>
+		<v-card-row actions class="amber lighten-1 mt-0">
+			<v-btn flat class="white--text">Try DEMO</v-btn>
 			<v-spacer></v-spacer>
 			<v-btn icon>
 				<v-icon class="white--text">explore</v-icon>
@@ -50,18 +48,16 @@
 
 <script>
 	export default {
-		props: ['onoff'],
+		props: ['onoff5'],
 		data () {
 			return {
-				card_text: 'Aplikacja wykorzystująca publiczne API, na podstawie którego wyszukuje informacje na temat polskich firm: adres, nazwa firmy, numery KRS, REGON oraz NIP.',
-				divider: '-----------------------',
-				technologies: 'Technologie: HTML5, CSS3, JavaScript, Vue.js, AJAX'
+				card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
 			}
 		},
 		methods: {
 			testowa122: function() {
-			this.onoff = 0;
-		}
+				this.onoff2 = 0;
+			}
 		}
 	}
 </script>
@@ -87,8 +83,5 @@
 	i {
 		color: #fff;
 		font-size: 21px;
-	}
-	a {
-		text-decoration: none;
 	}
 </style>

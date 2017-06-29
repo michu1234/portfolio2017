@@ -137,6 +137,7 @@
 		right: 50px;
 		z-index: 1;
 		width: 400px;
+		transition: all .3s;
 	}
 
 	.hello {

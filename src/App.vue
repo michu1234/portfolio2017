@@ -1,5 +1,6 @@
 <template>
-	<v-app id="example-2">
+<v-app id="example-2">
+
 		<v-navigation-drawer temporary v-model="drawer" :mini-variant.sync="mini" light>
 			<v-list class="pa-0">
 				<v-list-item>
@@ -16,7 +17,7 @@
 					</v-list-tile>
 				</v-list-item>
 			</v-list>
-			<v-card height="555px" class="grey lighten-4" id="navigation-1">
+			<v-card v-on:click="testowa" height="555px" class="grey lighten-4" id="navigation-1">
 				<v-list dense>
 					<template v-for="(item, i) in items">
 						<v-layout row v-if="item.heading" align-center :key="i">
@@ -29,7 +30,7 @@
 						<v-list-item :key="i" v-else>
 							<v-list-tile>
 								<v-list-tile-action>
-									<v-icon v-on:click="testowa">{{ item.icon }}</v-icon>
+									<v-icon>{{ item.icon }}</v-icon>
 								</v-list-tile-action>
 								<v-list-tile-content>
 									<v-list-tile-title> {{ item.text }} </v-list-tile-title>
@@ -39,23 +40,9 @@
 					</template>
 				</v-list>
 			</v-card>
-			<!--
-			<v-list class="pt-0" dense>
-				<v-divider></v-divider>
-				<v-list-item v-for="item in items" :key="item">
-					<v-list-tile>
-						<v-list-tile-action>
-							<v-icon>{{ item.icon }}</v-icon>
-						</v-list-tile-action>
-						<v-list-tile-content>
-							<v-list-tile-title>{{ item.title }}</v-list-tile-title>
-						</v-list-tile-content>
-					</v-list-tile>
-				</v-list-item>
-			</v-list>
---></v-navigation-drawer>
+</v-navigation-drawer>
 		<v-toolbar fixed class="grey darken-4" light>
-			<v-toolbar-side-icon light @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
+			<v-toolbar-side-icon light @click.native.stop.prevent="drawer = !drawer"></v-toolbar-side-icon>
 			<v-toolbar-title>DaveDev.De</v-toolbar-title>
 			<v-toolbar-items>
 				<v-toolbar-item>Home</v-toolbar-item>
@@ -88,7 +75,17 @@
 			<v-container fluid>
 				<div class="title">Kliknij w sidebar by powiększyć.</div>
 				<router-view></router-view>
-				<gallery></gallery>
+				<gallery :onoff.sync="onoff_gallery1"></gallery>
+				<gallery2 :onoff2.sync="onoff_gallery2"></gallery2>
+				<gallery3 :onoff3.sync="onoff_gallery3"></gallery3>
+				<gallery4 :onoff4.sync="onoff_gallery4"></gallery4>
+				<gallery5 :onoff5.sync="onoff_gallery5"></gallery5>
+				<gallery6 :onoff6.sync="onoff_gallery6"></gallery6>
+				<gallery7 :onoff7.sync="onoff_gallery7"></gallery7>
+				<gallery8 :onoff8.sync="onoff_gallery8"></gallery8>
+				<gallery9 :onoff9.sync="onoff_gallery9"></gallery9>
+				<gallery10 :onoff10.sync="onoff_gallery10"></gallery10>
+				<gallery11 :onoff11.sync="onoff_gallery11"></gallery11>
 				<!--v-router-->
 			</v-container>
 		</main>
@@ -108,8 +105,21 @@
 		}
 		, data() {
 			return {
-				onoff_preview: 0,
+				onoff_gallery1: 0,
+				onoff_gallery2: 0,
+				onoff_gallery3: 0,
+				onoff_gallery4: 0,
+				onoff_gallery5: 0,
+				onoff_gallery6: 0,
+				onoff_gallery7: 0,
+				onoff_gallery8: 0,
+				onoff_gallery9: 0,
+				onoff_gallery10: 0,
+				onoff_gallery11: 0,
+				onoff_gallery12: 0,
+				onoff_gallery13: 0,
 				drawer: null,
+				item: 0,
 				items: [
 					{
 						heading: 'Apps'
@@ -199,44 +209,23 @@
 		},
 		methods: {
 			testowa: function(e){
-				switch (e.target.textContent) {
-					case "lightbulb_outline":
-						this.onoff_preview = 1
-						break;
-					case "touch_app":
-						this.onoff_preview = 2
-						break;
-					case "account_box":
-						this.onoff_preview = 3
-						break;
-					case "archive":
-						this.onoff_preview = 4
-						break;
-					case "music_video":
-						this.onoff_preview = 5
-						break;
-					case "queue_music":
-						this.onoff_preview = 6
-						break;
-					case "chat_bubble":
-						this.onoff_preview = 7
-						break;
-					case "filter_vintage":
-						this.onoff_preview = 8
-						break;
-					case "assessment":
-						this.onoff_preview = 9
-						break;
-					case "play_circle_outline":
-						this.onoff_preview = 10
-						break;
-					case "format_paint":
-						this.onoff_preview = 11
-						break;
-        }
+				e.target.textContent == "lightbulb_outline" ? this.onoff_gallery1 = 1 : this.onoff_gallery1 = 0;
+				e.target.textContent == "touch_app" ? this.onoff_gallery2 = 2 : this.onoff_gallery2 = 0;
+				e.target.textContent == "account_box" ? this.onoff_gallery3 = 3 : this.onoff_gallery3 = 0;
+				e.target.textContent == "archive" ? this.onoff_gallery4 = 4 : this.onoff_gallery4 = 0;
+				e.target.textContent == "music_video" ? this.onoff_gallery5 = 5 : this.onoff_gallery5 = 0;
+				e.target.textContent == "queue_music" ? this.onoff_gallery6 = 6 : this.onoff_gallery6 = 0;
+				e.target.textContent == "chat_bubble" ? this.onoff_gallery7 = 7 : this.onoff_gallery7 = 0;
+				e.target.textContent == "filter_vintage" ? this.onoff_gallery8 = 8 : this.onoff_gallery8 = 0;
+				e.target.textContent == "assessment" ? this.onoff_gallery9 = 9 : this.onoff_gallery9 = 0;
+				e.target.textContent == "play_circle_outline" ? this.onoff_gallery10 = 10 : this.onoff_gallery10 = 0;
+				e.target.textContent == "format_paint" ? this.onoff_gallery11 = 11 : this.onoff_gallery11 = 0;
+				},
+			hello_dialog: window.onload = function() {
+				console.log(":-) HELLO EVERYBODY! :-)");
+			}
 			}
 		}
-	}
 </script>
 <!-- CSS -->
 <style scoped>
