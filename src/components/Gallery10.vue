@@ -30,6 +30,8 @@
 		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/blog-jason.jpg" height="350px"></v-card-row>
 		<v-card-text class="pink darken-1 darken-4 white--text">
 			<div v-text="card_text"></div>
+			<div v-text="divider"></div>
+			<div v-text="technologies"></div>
 	</v-card-text>
 		<v-card-row actions class="pink darken-3darken-1 mt-0">
 			<v-btn flat class="white--text">Try DEMO</v-btn>
@@ -51,7 +53,9 @@
 		props: ['onoff10'],
 		data () {
 			return {
-				card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
+				card_text: 'Portfolio web developera, zawierające listę projektów oraz dane kontaktowe. W tle strony umieszczono dwa rodzaje animacji wykonanych przy pomocy biblioteki P5.js.',
+				divider: '-----------------------',
+				technologies: 'Technologie: HTML5, CSS3, jQuery, P5.js'
 			}
 		},
 		methods: {

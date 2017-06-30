@@ -1,6 +1,6 @@
 <template>
 <v-app id="example-2">
-
+	<div v-if="onoff_clouds" class="clouds"></div>
 	<v-navigation-drawer temporary v-model="drawer" :mini-variant="mini" light>
 			<v-list class="pa-0">
 				<v-list-item v-if="mini">
@@ -24,7 +24,7 @@
 					</v-list-tile>
 				</v-list-item>
 			</v-list>
-			<v-card v-on:click="testowa" height="555px" class="grey lighten-4" id="navigation-1">
+		<v-card v-on:click="onoff_gallery" height="555px" class="grey lighten-4" id="navigation-1">
 				<v-list dense>
 					<template v-for="(item, i) in items">
 						<v-layout row v-if="item.heading" align-center :key="i">
@@ -48,21 +48,14 @@
 				</v-list>
 			</v-card>
 </v-navigation-drawer>
-		<v-toolbar fixed class="grey darken-4" light>
+<v-toolbar v-on:click="onoff_contact_input" fixed class="grey darken-4" light>
 			<v-toolbar-side-icon light @click.native.stop.prevent="drawer = !drawer"></v-toolbar-side-icon>
 			<v-toolbar-title>DaveDev.De</v-toolbar-title>
 			<v-toolbar-items>
-				<v-toolbar-item>Home</v-toolbar-item>
-				<v-toolbar-item>Contact</v-toolbar-item>
+				<v-toolbar-item>About Me</v-toolbar-item>
+				<v-toolbar-item>Find Me</v-toolbar-item>
 				<v-menu origin="center center" transition="v-scale-transition" bottom>
-					<v-btn primary light slot="activator"> Scale Transition </v-btn>
-					<v-list>
-						<v-list-item v-for="item in apps" :key="item">
-							<v-list-tile>
-								<v-list-tile-title>{{ item.title }}</v-list-tile-title>
-							</v-list-tile>
-						</v-list-item>
-					</v-list>
+					<v-btn primary light slot="activator">Contact Me</v-btn>
 				</v-menu>
 				<v-menu offset-y left bottom origin="top right" transition="v-scale-transition">
 					<v-btn icon light slot="activator">
@@ -80,7 +73,7 @@
 		</v-toolbar>
 		<main>
 			<v-container fluid>
-				<div class="title">Kliknij w sidebar by powiększyć.</div>
+				<div v-on:click="clouds_off" class="title">Turn off clouds!</div>
 				<router-view></router-view>
 				<gallery :onoff.sync="onoff_gallery1"></gallery>
 				<gallery2 :onoff2.sync="onoff_gallery2"></gallery2>
@@ -93,6 +86,7 @@
 				<gallery9 :onoff9.sync="onoff_gallery9"></gallery9>
 				<gallery10 :onoff10.sync="onoff_gallery10"></gallery10>
 				<gallery11 :onoff11.sync="onoff_gallery11"></gallery11>
+				<contact_field :onoff_contact.sync="onoff_contact1"></contact_field>
 				<!--v-router-->
 			</v-container>
 		</main>
@@ -112,6 +106,8 @@
 		}
 		, data() {
 			return {
+				onoff_clouds: true,
+				onoff_contact1: 0,
 				onoff_gallery1: 0,
 				onoff_gallery2: 0,
 				onoff_gallery3: 0,
@@ -200,24 +196,10 @@
 						title: 'Contact Developer'
 					}
 				]
-				, apps: [
-					{
-						title: 'Click Me'
-					}
-					, {
-						title: 'Click Me'
-					}
-					, {
-						title: 'Click Me'
-					}
-					, {
-						title: 'Click Me 2'
-					}
-				]
 			}
 		},
 		methods: {
-			testowa: function(e){
+			onoff_gallery: function(e){
 				e.target.textContent == "lightbulb_outline" ? this.onoff_gallery1 = 1 : this.onoff_gallery1 = 0;
 				e.target.textContent == "touch_app" ? this.onoff_gallery2 = 2 : this.onoff_gallery2 = 0;
 				e.target.textContent == "account_box" ? this.onoff_gallery3 = 3 : this.onoff_gallery3 = 0;
@@ -232,6 +214,12 @@
 				},
 			hello_dialog: window.onload = function() {
 				console.log(":-) HELLO EVERYBODY! :-)");
+			},
+			onoff_contact_input: function(e){
+				e.target.textContent == "Contact Me" ? this.onoff_contact1 = 1 : this.onoff_contact1 = 0;
+			},
+			clouds_off: function(){
+				this.onoff_clouds = !this.onoff_clouds;
 			}
 			}
 		}
@@ -258,5 +246,28 @@
 	}
 	.icon--light {
 		color: gray;
+	}
+	.clouds{
+		background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+		z-index: 0;
+		filter: grayscale(10%) drop-shadow(0 0 20px purple);
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		width:100%;
+		height:100%;
+		display:block;
+
+		-moz-animation:move-clouds-back 200s linear infinite;
+		-ms-animation:move-clouds-back 200s linear infinite;
+		-o-animation:move-clouds-back 200s linear infinite;
+		-webkit-animation:move-clouds-back 200s linear infinite;
+		animation:move-clouds-back 200s linear infinite;
+	}
+	@keyframes move-clouds-back {
+		from {background-position:0 0;}
+		to {background-position:10000px 0;};
 	}
 </style>

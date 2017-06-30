@@ -30,6 +30,8 @@
 		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/marketing.jpg" height="350px"></v-card-row>
 		<v-card-text class="blue-grey darken-3 white--text">
 			<div v-text="card_text"></div>
+			<div v-text="divider"></div>
+			<div v-text="technologies"></div>
 	</v-card-text>
 		<v-card-row actions class="blue-grey lighten-1 mt-0">
 			<v-btn flat class="white--text">Try DEMO</v-btn>
@@ -51,7 +53,9 @@
 		props: ['onoff9'],
 		data () {
 			return {
-				card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
+				card_text: 'PSD to HTML. Prosta, responsywna strona internetowa typu one-page site, zwierająca podstawowe informacje oraz formularz kontaktowy.',
+				divider: '-----------------------',
+				technologies: 'Technologie: HTML5, CSS3'
 			}
 		},
 		methods: {

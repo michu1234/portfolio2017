@@ -30,6 +30,8 @@
 		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/medical.jpg" height="350px"></v-card-row>
 		<v-card-text class="light-blue darken-4 white--text">
 			<div v-text="card_text"></div>
+			<div v-text="divider"></div>
+			<div v-text="technologies"></div>
 	</v-card-text>
 		<v-card-row actions class="light-blue darken-1 mt-0">
 			<v-btn flat class="white--text">Try DEMO</v-btn>
@@ -51,7 +53,9 @@
 		props: ['onoff4'],
 		data () {
 			return {
-				card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
+				card_text: 'Responsywna strona kliniki dentystycznej (strona główna + kilka podstron). Utrzymana w stylu wordpressowych szablonów BeTheme.',
+				divider: '-----------------------',
+				technologies: 'Technologie: HTML5, CSS3, jQuery'
 			}
 		},
 		methods: {

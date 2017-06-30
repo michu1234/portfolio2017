@@ -30,6 +30,8 @@
 		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/blog-jason.jpg" height="350px"></v-card-row>
 		<v-card-text class="red darken-4 white--text">
 			<div v-text="card_text"></div>
+			<div v-text="divider"></div>
+			<div v-text="technologies"></div>
 	</v-card-text>
 		<v-card-row actions class="red darken-1 mt-0">
 			<v-btn flat class="white--text">Try DEMO</v-btn>
@@ -51,7 +53,9 @@
 		props: ['onoff7'],
 		data () {
 			return {
-				card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
+				card_text: 'Blog ekonomiczny oparty na JSON API. Dodatkowo stronę wyposażono w slider, sticky menu, animowane menu, guzik zmiany LTR/RTL.',
+				divider: '-----------------------',
+				technologies: 'Technologie: HTML5, CSS3, jQuery, AJAX, JSON'
 			}
 		},
 		methods: {

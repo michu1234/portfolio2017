@@ -60,7 +60,7 @@
 		},
 		methods: {
 			testowa122: function() {
-				this.onoff2 = 0;
+				this.onoff3 = 0;
 			}
 		}
 	}

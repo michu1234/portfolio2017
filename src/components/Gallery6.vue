@@ -30,6 +30,8 @@
 		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/sound.jpg" height="350px"></v-card-row>
 		<v-card-text class="teal darken-3 white--text">
 			<div v-text="card_text"></div>
+			<div v-text="divider"></div>
+			<div v-text="technologies"></div>
 	</v-card-text>
 		<v-card-row actions class="teal lighten-2 mt-0">
 			<v-btn flat class="white--text">Try DEMO</v-btn>
@@ -51,7 +53,9 @@
 		props: ['onoff6'],
 		data () {
 			return {
-				card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
+				card_text: 'Responsywna strona internetowa oparta na frameworku Bootstrap. Tematyczne dedykowana branży muzycznej. Zbudowana w dwóch wersjach kolorystycznych.',
+				divider: '-----------------------',
+				technologies: 'Technologie: HTML5, CSS3, jQuery, Bootstrap'
 			}
 		},
 		methods: {
