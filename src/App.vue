@@ -1,15 +1,15 @@
 <template>
-<v-app id="example-2">
-	<div v-if="onoff_clouds" class="clouds"></div>
-	<v-navigation-drawer temporary v-model="drawer" :mini-variant="mini" light>
+	<v-app id="example-2">
+		<div v-if="onoff_clouds" class="clouds"></div>
+		<v-navigation-drawer temporary v-model="drawer" :mini-variant="mini" light>
 			<v-list class="pa-0">
 				<v-list-item v-if="mini">
 					<v-list-tile @click.native.stop="mini = !mini">
 						<v-list-tile-action>
 							<v-icon light>chevron_right</v-icon>
-	</v-list-tile-action>
-	</v-list-tile>
-	</v-list-item>
+						</v-list-tile-action>
+					</v-list-tile>
+				</v-list-item>
 				<v-list-item>
 					<v-list-tile avatar tag="div">
 						<v-list-tile-avatar> <img src="http://davedeveloper.eu/img/profile-img222.png" /> </v-list-tile-avatar>
@@ -24,7 +24,7 @@
 					</v-list-tile>
 				</v-list-item>
 			</v-list>
-		<v-card v-on:click="onoff_gallery" height="555px" class="grey lighten-4" id="navigation-1">
+			<v-card v-on:click="onoff_gallery" height="555px" class="grey lighten-4" id="navigation-1">
 				<v-list dense>
 					<template v-for="(item, i) in items">
 						<v-layout row v-if="item.heading" align-center :key="i">
@@ -47,8 +47,8 @@
 					</template>
 				</v-list>
 			</v-card>
-</v-navigation-drawer>
-<v-toolbar v-on:click="onoff_contact_input" fixed class="grey darken-4" light>
+		</v-navigation-drawer>
+		<v-toolbar v-on:click="onoff_contact_input" fixed class="grey darken-4" light>
 			<v-toolbar-side-icon light @click.native.stop.prevent="drawer = !drawer"></v-toolbar-side-icon>
 			<v-toolbar-title>DaveDev.De</v-toolbar-title>
 			<v-toolbar-items>
@@ -73,7 +73,10 @@
 		</v-toolbar>
 		<main>
 			<v-container fluid>
-				<div v-on:click="off_clouds" class="title"><v-btn outline class="indigo--text">Turn off clouds!</v-btn></div>
+				<img class="adult_rihno" src="http://davedeveloper.eu/img/adult.svg" alt=""> <img class="big_adult_rihno" src="http://davedeveloper.eu/img/big-adult.svg" alt="">
+				<div v-on:click="off_clouds" class="title">
+					<v-btn outline class="indigo--text">Turn off clouds!</v-btn>
+				</div>
 				<router-view></router-view>
 				<gallery :onoff.sync="onoff_gallery1"></gallery>
 				<gallery2 :onoff2.sync="onoff_gallery2"></gallery2>
@@ -106,26 +109,26 @@
 		}
 		, data() {
 			return {
-				onoff_clouds: true,
-				onoff_contact1: 0,
-				onoff_gallery1: 0,
-				onoff_gallery2: 0,
-				onoff_gallery3: 0,
-				onoff_gallery4: 0,
-				onoff_gallery5: 0,
-				onoff_gallery6: 0,
-				onoff_gallery7: 0,
-				onoff_gallery8: 0,
-				onoff_gallery9: 0,
-				onoff_gallery10: 0,
-				onoff_gallery11: 0,
-				onoff_gallery12: 0,
-				onoff_gallery13: 0,
-				drawer: null,
-				item: 0,
-				mini: false,
-				right: null,
-				items: [
+				onoff_clouds: true
+				, onoff_contact1: 0
+				, onoff_gallery1: 0
+				, onoff_gallery2: 0
+				, onoff_gallery3: 0
+				, onoff_gallery4: 0
+				, onoff_gallery5: 0
+				, onoff_gallery6: 0
+				, onoff_gallery7: 0
+				, onoff_gallery8: 0
+				, onoff_gallery9: 0
+				, onoff_gallery10: 0
+				, onoff_gallery11: 0
+				, onoff_gallery12: 0
+				, onoff_gallery13: 0
+				, drawer: null
+				, item: 0
+				, mini: false
+				, right: null
+				, items: [
 					{
 						heading: 'Apps'
 					}
@@ -197,9 +200,9 @@
 					}
 				]
 			}
-		},
-		methods: {
-			onoff_gallery: function(e){
+		}
+		, methods: {
+			onoff_gallery: function (e) {
 				e.target.textContent == "lightbulb_outline" ? this.onoff_gallery1 = 1 : this.onoff_gallery1 = 0;
 				e.target.textContent == "touch_app" ? this.onoff_gallery2 = 2 : this.onoff_gallery2 = 0;
 				e.target.textContent == "account_box" ? this.onoff_gallery3 = 3 : this.onoff_gallery3 = 0;
@@ -211,18 +214,18 @@
 				e.target.textContent == "assessment" ? this.onoff_gallery9 = 9 : this.onoff_gallery9 = 0;
 				e.target.textContent == "play_circle_outline" ? this.onoff_gallery10 = 10 : this.onoff_gallery10 = 0;
 				e.target.textContent == "format_paint" ? this.onoff_gallery11 = 11 : this.onoff_gallery11 = 0;
-				},
-			hello_dialog: window.onload = function() {
+			}
+			, hello_dialog: window.onload = function () {
 				console.log(":-) HELLO EVERYBODY! :-)");
-			},
-			onoff_contact_input: function(e){
+			}
+			, onoff_contact_input: function (e) {
 				e.target.textContent == "Contact Me" ? this.onoff_contact1 = 1 : this.onoff_contact1 = 0;
-			},
-			off_clouds: function() {
+			}
+			, off_clouds: function () {
 				this.onoff_clouds = !this.onoff_clouds;
 			}
-			}
 		}
+	}
 </script>
 <!-- CSS -->
 <style scoped>
@@ -244,33 +247,54 @@
 	#navigation-1 a {
 		text-decoration: none;
 	}
+
 	.icon--light {
 		color: gray;
 	}
-	.clouds{
-		background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+
+	.clouds {
+		background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
 		z-index: 0;
 		filter: grayscale(10%) drop-shadow(0 0 20px purple);
-		position:absolute;
-		top:0;
-		left:0;
-		right:0;
-		bottom:0;
-		width:100%;
-		height:100%;
-		display:block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		-moz-animation: move-clouds-back 200s linear infinite;
+		-ms-animation: move-clouds-back 200s linear infinite;
+		-o-animation: move-clouds-back 200s linear infinite;
+		-webkit-animation: move-clouds-back 200s linear infinite;
+		animation: move-clouds-back 200s linear infinite;
+	}
 
-		-moz-animation:move-clouds-back 200s linear infinite;
-		-ms-animation:move-clouds-back 200s linear infinite;
-		-o-animation:move-clouds-back 200s linear infinite;
-		-webkit-animation:move-clouds-back 200s linear infinite;
-		animation:move-clouds-back 200s linear infinite;
-	}
 	@keyframes move-clouds-back {
-		from {background-position:0 0;}
-		to {background-position:10000px 0;};
+		from {
+			background-position: 0 0;
+		}
+		to {
+			background-position: 10000px 0;
+		}
+		;
 	}
+
 	.title {
 		z-index: 1000;
+	}
+
+	.adult_rihno {
+		position: absolute;
+		transform: scale(.5);
+		bottom: -200px;
+		left: -550px;
+	}
+
+	.big_adult_rihno {
+		position: absolute;
+		top: 0;
+		right: -400px;
 	}
 </style>
