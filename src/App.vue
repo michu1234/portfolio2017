@@ -73,7 +73,7 @@
 		</v-toolbar>
 		<main>
 			<v-container fluid>
-				<div v-on:click="clouds_off" class="title">Turn off clouds!</div>
+				<div v-on:click="off_clouds" class="title"><v-btn outline class="indigo--text">Turn off clouds!</v-btn></div>
 				<router-view></router-view>
 				<gallery :onoff.sync="onoff_gallery1"></gallery>
 				<gallery2 :onoff2.sync="onoff_gallery2"></gallery2>
@@ -218,7 +218,7 @@
 			onoff_contact_input: function(e){
 				e.target.textContent == "Contact Me" ? this.onoff_contact1 = 1 : this.onoff_contact1 = 0;
 			},
-			clouds_off: function(){
+			off_clouds: function() {
 				this.onoff_clouds = !this.onoff_clouds;
 			}
 			}
@@ -269,5 +269,8 @@
 	@keyframes move-clouds-back {
 		from {background-position:0 0;}
 		to {background-position:10000px 0;};
+	}
+	.title {
+		z-index: 1000;
 	}
 </style>
