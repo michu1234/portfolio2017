@@ -1,6 +1,5 @@
 <template>
-	<v-app id="example-2">
-		<div v-if="onoff_clouds" class="clouds"></div>
+<v-app v-on:click="about_me_onoff" id="example-2">
 		<v-navigation-drawer temporary v-model="drawer" :mini-variant="mini" light>
 			<v-list class="pa-0">
 				<v-list-item v-if="mini">
@@ -72,25 +71,34 @@
 			</v-toolbar-items>
 		</v-toolbar>
 		<main>
-			<v-container fluid>
-				<img class="adult_rihno" src="http://davedeveloper.eu/img/adult.svg" alt=""> <img class="big_adult_rihno" src="http://davedeveloper.eu/img/big-adult.svg" alt="">
-				<div v-on:click="off_clouds" class="title">
-					<v-btn outline class="indigo--text">Turn off clouds!</v-btn>
-				</div>
-				<router-view></router-view>
-				<gallery :onoff.sync="onoff_gallery1"></gallery>
-				<gallery2 :onoff2.sync="onoff_gallery2"></gallery2>
-				<gallery3 :onoff3.sync="onoff_gallery3"></gallery3>
-				<gallery4 :onoff4.sync="onoff_gallery4"></gallery4>
-				<gallery5 :onoff5.sync="onoff_gallery5"></gallery5>
-				<gallery6 :onoff6.sync="onoff_gallery6"></gallery6>
-				<gallery7 :onoff7.sync="onoff_gallery7"></gallery7>
-				<gallery8 :onoff8.sync="onoff_gallery8"></gallery8>
-				<gallery9 :onoff9.sync="onoff_gallery9"></gallery9>
-				<gallery10 :onoff10.sync="onoff_gallery10"></gallery10>
-				<gallery11 :onoff11.sync="onoff_gallery11"></gallery11>
-				<contact_field :onoff_contact.sync="onoff_contact1"></contact_field>
-				<!--v-router-->
+			<v-container v-on:mousemove="move_small_rhino" fluid>
+				<div v-on:mousemove="move_rhino">
+					<div v-if="onoff_clouds" class="clouds"></div>
+				<img v-bind:style="{transform: transform_rhino, position: absolute2, bottom: small_rhino_b + 'px', left: small_rhino_l + 'px' }" src="http://davedeveloper.eu/img/adult.svg" alt="">
+
+
+					<img v-bind:style="{position: absolute2, top: rhino_t + 'px', right: rhino_r + 'px' }" src="http://davedeveloper.eu/img/big-adult.svg" alt="">
+
+
+					<div v-on:click="off_clouds" class="title">
+						<v-btn outline class="indigo--text">Turn off clouds!</v-btn>
+					</div>
+					<router-view></router-view>
+					<gallery :onoff.sync="onoff_gallery1"></gallery>
+					<gallery2 :onoff2.sync="onoff_gallery2"></gallery2>
+					<gallery3 :onoff3.sync="onoff_gallery3"></gallery3>
+					<gallery4 :onoff4.sync="onoff_gallery4"></gallery4>
+					<gallery5 :onoff5.sync="onoff_gallery5"></gallery5>
+					<gallery6 :onoff6.sync="onoff_gallery6"></gallery6>
+					<gallery7 :onoff7.sync="onoff_gallery7"></gallery7>
+					<gallery8 :onoff8.sync="onoff_gallery8"></gallery8>
+					<gallery9 :onoff9.sync="onoff_gallery9"></gallery9>
+					<gallery10 :onoff10.sync="onoff_gallery10"></gallery10>
+					<gallery11 :onoff11.sync="onoff_gallery11"></gallery11>
+					<contact_field :onoff_contact.sync="onoff_contact1"></contact_field>
+					<find_me></find_me>
+					<about_me :about_me_on.sync="onoff_about_me"></about_me>
+					<!--v-router--></div>
 			</v-container>
 		</main>
 		<v-footer class="pa-3 light-blue darken-4">
@@ -106,9 +114,16 @@
 	export default {
 		components: {
 			'contact': Contact
-		}
-		, data() {
+		},
+		  data() {
 			return {
+				transform_rhino: " scale(.5)",
+				absolute2: "absolute",
+				rhino_r: -400,
+				rhino_t: 0,
+				small_rhino_l: -550,
+				small_rhino_b: -200,
+				onoff_about_me: 0,
 				onoff_clouds: true
 				, onoff_contact1: 0
 				, onoff_gallery1: 0
@@ -223,6 +238,33 @@
 			}
 			, off_clouds: function () {
 				this.onoff_clouds = !this.onoff_clouds;
+			},
+			move_rhino: function(event) {
+				let mouseX = event.screenX/10;
+				let mouseY = event.screenY/10;
+
+				setTimeout(()=>{
+					this.rhino_t = mouseY;
+					this.rhino_r = -400 + mouseX;
+				}, 100)
+
+			},
+			move_small_rhino: function(event) {
+				let mouseX = event.screenX/50;
+				let mouseY = event.screenY/10;
+
+				setTimeout(()=>{
+					this.small_rhino_b = -200 + mouseY;
+					this.small_rhino_l = -550 + mouseX;
+				}, 100)
+
+
+
+
+
+			},
+			about_me_onoff: function(e) {
+				e.target.textContent == "About Me" ? this.onoff_about_me = 1 : this.onoff_about_me = 0;
 			}
 		}
 	}
@@ -285,16 +327,5 @@
 		z-index: 1000;
 	}
 
-	.adult_rihno {
-		position: absolute;
-		transform: scale(.5);
-		bottom: -200px;
-		left: -550px;
-	}
 
-	.big_adult_rihno {
-		position: absolute;
-		top: 0;
-		right: -400px;
-	}
 </style>

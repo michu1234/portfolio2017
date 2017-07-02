@@ -13,6 +13,8 @@ import Gallery9 from './components/Gallery9'
 import Gallery10 from './components/Gallery10'
 import Gallery11 from './components/Gallery11'
 import Contact_field from './components/Contact_field'
+import Find_me from './components/Find_me'
+import About_me from './components/About_me'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import '../css/fontello.css'
@@ -33,6 +35,8 @@ Vue.component('gallery9', Gallery9)
 Vue.component('gallery10', Gallery10)
 Vue.component('gallery11', Gallery11)
 Vue.component('contact_field', Contact_field)
+Vue.component('find_me', Find_me)
+Vue.component('about_me', About_me)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
