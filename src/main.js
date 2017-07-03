@@ -15,6 +15,7 @@ import Gallery11 from './components/Gallery11'
 import Contact_field from './components/Contact_field'
 import Find_me from './components/Find_me'
 import About_me from './components/About_me'
+import ToDO from './components/ToDO'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import '../css/fontello.css'
@@ -37,6 +38,7 @@ Vue.component('gallery11', Gallery11)
 Vue.component('contact_field', Contact_field)
 Vue.component('find_me', Find_me)
 Vue.component('about_me', About_me)
+Vue.component('to_do', ToDO)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

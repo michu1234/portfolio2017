@@ -77,13 +77,14 @@
 				<img v-bind:style="{transform: transform_rhino, position: absolute2, bottom: small_rhino_b + 'px', left: small_rhino_l + 'px' }" src="http://davedeveloper.eu/img/adult.svg" alt="">
 
 
-					<img v-bind:style="{position: absolute2, top: rhino_t + 'px', right: rhino_r + 'px' }" src="http://davedeveloper.eu/img/big-adult.svg" alt="">
+					<img v-bind:style="{position: absolute2, top: rhino_t + 'px', right: rhino_r + 'px'}" src="http://davedeveloper.eu/img/big-adult.svg" alt="">
 
 
 					<div v-on:click="off_clouds" class="title">
 						<v-btn outline class="indigo--text">Turn off clouds!</v-btn>
 					</div>
 					<router-view></router-view>
+					<to_do v-if="to_do_on"></to_do>
 					<gallery :onoff.sync="onoff_gallery1"></gallery>
 					<gallery2 :onoff2.sync="onoff_gallery2"></gallery2>
 					<gallery3 :onoff3.sync="onoff_gallery3"></gallery3>
@@ -218,7 +219,7 @@
 		}
 		, methods: {
 			onoff_gallery: function (e) {
-				e.target.textContent == "lightbulb_outline" ? this.onoff_gallery1 = 1 : this.onoff_gallery1 = 0;
+				e.target.textContent === "lightbulb_outline" ? this.onoff_gallery1 = 1 : this.onoff_gallery1 = 0;
 				e.target.textContent == "touch_app" ? this.onoff_gallery2 = 2 : this.onoff_gallery2 = 0;
 				e.target.textContent == "account_box" ? this.onoff_gallery3 = 3 : this.onoff_gallery3 = 0;
 				e.target.textContent == "archive" ? this.onoff_gallery4 = 4 : this.onoff_gallery4 = 0;
@@ -246,7 +247,7 @@
 				setTimeout(()=>{
 					this.rhino_t = mouseY;
 					this.rhino_r = -400 + mouseX;
-				}, 100)
+				}, 150)
 
 			},
 			move_small_rhino: function(event) {
@@ -256,7 +257,7 @@
 				setTimeout(()=>{
 					this.small_rhino_b = -200 + mouseY;
 					this.small_rhino_l = -550 + mouseX;
-				}, 100)
+				}, 150)
 
 
 
