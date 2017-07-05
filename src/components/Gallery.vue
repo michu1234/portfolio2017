@@ -1,5 +1,5 @@
 <template>
-<div class="gallery">
+<div  class="gallery">
 
 <!--	PORTFOLIO  -->
 
@@ -15,7 +15,7 @@
 					<v-list>
 						<v-list-item>
 							<v-list-tile>
-								<v-list-tile-title v-on:click="testowa122">Remove Card</v-list-tile-title>
+								<v-list-tile-title v-on:click="remove_card">Remove Card</v-list-tile-title>
 	</v-list-tile>
 	</v-list-item>
 						<v-list-item>
@@ -50,7 +50,12 @@
 
 <script>
 	export default {
-		props: ['onoff'],
+		props: {
+			onoff: {
+				type: Array,
+				required: true
+			}
+		},
 		data () {
 			return {
 				card_text: 'Aplikacja wykorzystująca publiczne API, na podstawie którego wyszukuje informacje na temat polskich firm: adres, nazwa firmy, numery KRS, REGON oraz NIP.',
@@ -59,8 +64,8 @@
 			}
 		},
 		methods: {
-			testowa122: function() {
-			this.onoff = 0;
+			remove_card: function() {
+			this.$emit('nulled', '0');
 		}
 		}
 	}

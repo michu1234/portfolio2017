@@ -1,12 +1,22 @@
 <template>
 <v-flex class="to-do" xs12 sm6 offset-sm3>
-	<v-card>
+	<v-card v-if="onoff0 == 1">
 		<v-toolbar class="cyan" light>
 			<v-toolbar-side-icon light></v-toolbar-side-icon>
 			<v-toolbar-title>TODO APP</v-toolbar-title>
-			<v-btn light icon>
-				<v-icon>search</v-icon>
+			<v-menu id="marriot" bottom left origin="top right">
+				<v-btn icon="icon" slot="activator" class="white--text">
+					<v-icon>more_vert</v-icon>
 	</v-btn>
+				<v-list>
+
+					<v-list-item>
+						<v-list-tile>
+							<v-list-tile-title v-on:click="remove_card">Remove Card</v-list-tile-title>
+	</v-list-tile>
+	</v-list-item>
+	</v-list>
+	</v-menu>
 	</v-toolbar>
 		<v-list three-line>
 			<v-card class="grey lighten-4 elevation-0">
@@ -64,6 +74,7 @@
 </template>
 <script>
 	export default {
+		props: ['onoff0'],
 		name: 'hello'
 		, data() {
 			return {
@@ -93,8 +104,11 @@
 			}
 			, deleteTask: function (task) {
 				this.items.splice(this.items.indexOf(task), 1)
+			},
+			remove_card: function(){
+				this.$emit('nulled', '0');
 			}
-			, }
+		}
 	}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

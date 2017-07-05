@@ -4,7 +4,7 @@
 	<!--	PORTFOLIO  -->
 
 	<v-card v-if="onoff10 == 10">
-		<v-card-row class="pink darken-4" light>
+		<v-card-row class="blue-grey darken-2" light>
 			<v-card-title>
 				<span class="white--text">Web Developer Portfolio</span>
 				<v-spacer></v-spacer>
@@ -15,7 +15,7 @@
 					<v-list>
 						<v-list-item>
 							<v-list-tile>
-								<v-list-tile-title v-on:click="testowa122">Remove Card</v-list-tile-title>
+								<v-list-tile-title v-on:click="remove_card">Remove Card</v-list-tile-title>
 	</v-list-tile>
 	</v-list-item>
 						<v-list-item>
@@ -27,13 +27,13 @@
 	</v-menu>
 	</v-card-title>
 	</v-card-row>
-		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/blog-jason.jpg" height="350px"></v-card-row>
-		<v-card-text class="pink darken-1 darken-4 white--text">
+		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/cinema.jpg" height="350px"></v-card-row>
+		<v-card-text class="blue-grey darken-2 white--text">
 			<div v-text="card_text"></div>
 			<div v-text="divider"></div>
 			<div v-text="technologies"></div>
 	</v-card-text>
-		<v-card-row actions class="pink darken-3darken-1 mt-0">
+		<v-card-row actions class="blue-grey lighten-3 mt-0">
 			<v-btn flat class="white--text">Try DEMO</v-btn>
 			<v-spacer></v-spacer>
 			<v-btn icon>
@@ -59,8 +59,8 @@
 			}
 		},
 		methods: {
-			testowa122: function() {
-				this.onoff2 = 0;
+			remove_card: function() {
+				this.$emit('nulled', '0');
 			}
 		}
 	}

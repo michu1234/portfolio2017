@@ -15,7 +15,7 @@
 					<v-list>
 						<v-list-item>
 							<v-list-tile>
-								<v-list-tile-title v-on:click="testowa122">Remove Card</v-list-tile-title>
+								<v-list-tile-title v-on:click="remove_card">Remove Card</v-list-tile-title>
 	</v-list-tile>
 	</v-list-item>
 						<v-list-item>
@@ -59,8 +59,8 @@
 			}
 		},
 		methods: {
-			testowa122: function() {
-				this.onoff3 = 0;
+			remove_card: function() {
+				this.$emit('nulled', '0');
 			}
 		}
 	}

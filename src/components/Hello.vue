@@ -56,7 +56,7 @@
 			</v-flex>
 			<p>
 				<v-btn v-on:click.native="toggles" light primary class="deep-purple darken-3">{{link}} </v-btn> <span light v-tooltip:bottom="{ html: '★★★' }" primary> | {{JavaScript}},</span>
-				<a href="http:davedev.de"> <span light v-tooltip:bottom="{ html: '★★★' }" primary>{{Vue}},</span></a> <span light v-tooltip:bottom="{ html: '★★★★' }" primary>{{jQuery}},</span> <span light v-tooltip:bottom="{ html: '★★★★' }" primary>{{P5}},</span> <span light v-tooltip:bottom="{ html: '★★★★★' }" primary>{{CSS3}},</span> <span light v-tooltip:bottom="{ html: '★★★★★' }" primary>{{HTML5}}</span> </p>
+				<span class="underline" light v-tooltip:bottom="{ html: '★★★' }" primary>{{Vue}},</span> <span light v-tooltip:bottom="{ html: '★★★★' }" primary>{{jQuery}},</span> <span light v-tooltip:bottom="{ html: '★★★★' }" primary>{{P5}},</span> <span light v-tooltip:bottom="{ html: '★★★★★' }" primary>{{CSS3}},</span> <span light v-tooltip:bottom="{ html: '★★★★★' }" primary>{{HTML5}}</span> </p>
 
 				<span class="social-media"><i class="icon-github-circled"></i><i class="icon-linkedin-squared"></i><i class="icon-codepen"></i><i class="icon-facebook-official"></i>
     	<i class="clasa"></i>
@@ -179,5 +179,8 @@
 	}
 	i:hover {
 		color: #000052;
+	}
+	.underline {
+		text-decoration: underline;
 	}
 </style>

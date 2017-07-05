@@ -5,9 +5,9 @@
 				<v-flex xs12 md8 offset-md2>
 					<v-card>
 						<v-toolbar class="pink" light>
-							<v-icon class="white--text">arrow_back</v-icon>
+							<v-icon class="white--text" v-on:click="close_card">arrow_back</v-icon>
 							<v-toolbar-title>Compose</v-toolbar-title>
-							<v-icon class="white--text">send</v-icon>
+							<v-icon class="white--text" v-on:click="close_card">send</v-icon>
 						</v-toolbar>
 						<v-card-row>
 							<v-container fluid class="pa-0">
@@ -44,7 +44,12 @@
 				return {
 					title: 'Hi,\nI just wanted to check in and see if you had any plans the upcoming week. We are thinking about...'
 				}
+			},
+		methods: {
+			close_card: function() {
+				this.$emit('nulled', '0');
 			}
+		}
 	}
 </script>
 <!-- CSS -->

@@ -11,9 +11,9 @@
 	</v-card-row>
 			<v-card-row actions class="blue-grey darken-4indigo">
 				<strong>Torun, &nbsp;</strong>
-				<div>Feb 23, 7:00pm</div>
+				<div>Feb 23, 7:00pm &nbsp;</div>
 				<v-btn flat class="white--text">
-					<v-icon left light>directions</v-icon>Directions
+					<v-icon left light v-on:click="close_card">directions</v-icon>Close
 	</v-btn>
 
 
@@ -35,6 +35,11 @@
 		data() {
 			return {
 
+			}
+		},
+		methods: {
+			close_card: function() {
+				this.$emit('nulled', '0');
 			}
 		}
 	}

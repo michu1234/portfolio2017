@@ -19,9 +19,10 @@ import ToDO from './components/ToDO'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import '../css/fontello.css'
+//import './components/map.js'
 import App from './App'
 import router from './router'
-
+import * as VueGoogleMaps from 'vue2-google-maps';
 
 Vue.use(Vuetify)
 Vue.component('gallery', Gallery)
@@ -40,6 +41,18 @@ Vue.component('find_me', Find_me)
 Vue.component('about_me', About_me)
 Vue.component('to_do', ToDO)
 Vue.config.productionTip = false
+
+
+Vue.use(VueGoogleMaps, {
+	load: {
+		key: 'AIzaSyD__5V4Alpsok-i4prz1OVsNGU4XzmqlEs',
+		v: 'OPTIONAL VERSION NUMBER',
+		// libraries: 'places', //// If you need to use place input
+	}
+});
+
+
+
 
 /* eslint-disable no-new */
 new Vue({
