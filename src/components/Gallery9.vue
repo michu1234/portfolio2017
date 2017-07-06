@@ -34,12 +34,12 @@
 			<div v-text="technologies"></div>
 	</v-card-text>
 		<v-card-row actions class="blue-grey lighten-1 mt-0">
-			<v-btn flat class="white--text">Try DEMO</v-btn>
+		<a href="http://marketing.davedeveloper.eu" target="_blank">	<v-btn flat class="white--text">Try DEMO</v-btn></a>
 			<v-spacer></v-spacer>
-			<v-btn icon>
-				<v-icon class="white--text">explore</v-icon>
-				<i class="icon-github-circled"></i>
-	</v-btn>
+			<a href="https://github.com/michu1234/marketing_agency" target="_blank">		<v-btn icon>
+					<v-icon class="white--text">explore</v-icon>
+					<i class="icon-github-circled"></i>
+					</v-btn></a>
 	</v-card-row>
 	</v-card>
 
@@ -87,5 +87,8 @@
 	i {
 		color: #fff;
 		font-size: 21px;
+	}
+	a {
+		text-decoration: none;
 	}
 </style>

@@ -48,17 +48,17 @@
 			</v-card>
 		</v-navigation-drawer>
 <v-toolbar v-on:click="onoff_contact_input" fixed class="grey darken-4" light>
-			<v-toolbar-side-icon light @click.native.stop.prevent="drawer = !drawer"></v-toolbar-side-icon>
-			<v-toolbar-title>DaveDeveloper.eu</v-toolbar-title>
+	<v-toolbar-side-icon class="hidden-sm-and-down" light @click.native.stop.prevent="drawer = !drawer"></v-toolbar-side-icon>
+	<v-toolbar-title >DaveDeveloper.eu</v-toolbar-title>
 	<v-toolbar-items v-on:click="onoff_find_me_card">
 				<v-toolbar-item>About Me</v-toolbar-item>
 		<v-toolbar-item>Find Me</v-toolbar-item>
 				<v-menu origin="center center" transition="v-scale-transition" bottom>
-					<v-btn primary light slot="activator">Contact Me</v-btn>
+					<v-btn class="hidden-xs-only" primary light slot="activator">Contact Me</v-btn>
 				</v-menu>
 				<v-menu offset-y left bottom origin="top right" transition="v-scale-transition">
 					<v-btn icon light slot="activator">
-						<v-icon>more_vert</v-icon>
+						<v-icon class="hidden-xs-only">more_vert</v-icon>
 					</v-btn>
 					<v-list>
 						<v-list-item v-for="task in tasks" :key="item">
@@ -73,7 +73,7 @@
 		<main>
 			<v-container v-on:mousemove="move_small_rhino" fluid>
 				<div v-on:mousemove="move_rhino">
-					<div v-if="onoff_clouds" class="clouds"></div> <img v-bind:style="{transform: transform_rhino, position: absolute2, bottom: small_rhino_b + 'px', left: small_rhino_l + 'px' }" src="http://davedeveloper.eu/img/adult.svg" alt=""> <img v-bind:style="{position: absolute2, top: rhino_t + 'px', right: rhino_r + 'px'}" src="http://davedeveloper.eu/img/big-adult.svg" alt="">
+					<div v-if="onoff_clouds" class="clouds"></div> <img class="hidden-sm-and-down" v-bind:style="{transform: transform_rhino, position: absolute2, bottom: small_rhino_b + 'px', left: small_rhino_l + 'px' }" src="http://davedeveloper.eu/img/adult.svg" alt=""> <img class="hidden-xs-only" v-bind:style="{position: absolute2, top: rhino_t + 'px', right: rhino_r + 'px'}" src="http://davedeveloper.eu/img/big-adult.svg" alt="">
 					<div v-on:click="off_clouds" class="title">
 						<v-btn outline class="indigo--text">Turn off clouds!</v-btn>
 					</div>
@@ -100,17 +100,17 @@
 
 		<v-footer class="pa-3 light-blue darken-4">
 			<contact></contact>
-			<v-btn v-on:click.native="onoff_todo_card" primary fab small dark>
+			<v-btn class="hidden-sm-and-down" v-on:click.native="onoff_todo_card" primary fab small dark>
 				<v-icon>done_all</v-icon>
 			</v-btn>
-			<v-btn primary fab small dark>
+			<v-btn class="hidden-sm-and-down" primary fab small dark>
 				<v-icon>code</v-icon>
 			</v-btn>
-			<v-btn primary fab small dark>
+			<v-btn class="hidden-sm-and-down" primary fab small dark>
 				<v-icon>power_settings_new</v-icon>
 			</v-btn>
 			<v-spacer></v-spacer>
-			<div><small>powered by Vue.js | Dawid Nawrocki © {{ new Date().getFullYear() }}</small></div>
+			<div class="hidden-sm-and-down"><small>powered by Vue.js | Dawid Nawrocki © {{ new Date().getFullYear() }}</small></div>
 		</v-footer>
 		</v-card>
 	</v-app>
@@ -381,4 +381,5 @@
 	.title {
 		z-index: 1000;
 	}
+
 </style>

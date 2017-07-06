@@ -1,7 +1,7 @@
 <template>
 	<div class="hello">
 		<div class="welcome">
-			<h1 sm-display-4>{{ msg }}</h1>
+			<h1>{{ msg }}</h1>
 			<v-flex v-if="skills" class="skills-list" xs12 sm6 offset-sm3>
 				<v-card>
 					<v-toolbar class="light-blue" light>
@@ -55,10 +55,10 @@
 				</v-card>
 			</v-flex>
 			<p>
-				<v-btn v-on:click.native="toggles" light primary class="deep-purple darken-3">{{link}} </v-btn> <span light v-tooltip:bottom="{ html: '★★★' }" primary> | {{JavaScript}},</span>
+				<v-btn v-on:click.native="toggles" light primary class="deep-purple darken-3 hidden-xs-only">{{link}} </v-btn> <span light v-tooltip:bottom="{ html: '★★★' }" primary> | {{JavaScript}},</span>
 				<span class="underline" light v-tooltip:bottom="{ html: '★★★' }" primary>{{Vue}},</span> <span light v-tooltip:bottom="{ html: '★★★★' }" primary>{{jQuery}},</span> <span light v-tooltip:bottom="{ html: '★★★★' }" primary>{{P5}},</span> <span light v-tooltip:bottom="{ html: '★★★★★' }" primary>{{CSS3}},</span> <span light v-tooltip:bottom="{ html: '★★★★★' }" primary>{{HTML5}}</span> </p>
 
-				<span class="social-media"><i class="icon-github-circled"></i><i class="icon-linkedin-squared"></i><i class="icon-codepen"></i><i class="icon-facebook-official"></i>
+			<span class="social-media"><a href="https://github.com/michu1234" target="_blank"><i class="icon-github-circled"></i></a><a href="https://www.linkedin.com/in/dawid-nawrocki-1a333913b/" target="_blank"><i class="icon-linkedin-squared"></i></a><a href="https://codepen.io/DaveDeveloperDe/" target="_blank"><i class="icon-codepen"></i></a><a href="https://join.slack.com/dev-info-team/shared_invite/MjAwMjQwNTA0NzQyLTE0OTc3MzczODktNmJjY2U1NjZkMQ" target="_blank"><i class="icon-slack"></i></a>
     	<i class="clasa"></i>
     	<i class="clasa"></i>
     	<i class="clasa"></i></span> </div>
@@ -155,18 +155,24 @@
 		text-shadow: 0px -1px 0px #000;
 		margin: 0 0 0 0;
 		padding: 0;
-		white-space: nowrap;
 	}
 
 	p {
+		margin: 0 auto;
+		width: 80vw;
+		padding: 15px;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 1.5em;
 		text-shadow: 0px -1px 0px #000;
 		color: #fff;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		text-align: center;
 	}
 
 	a {
-		color: #555555;
+		color: #fff;
 	}
 	.social-media {
 		display: flex;
