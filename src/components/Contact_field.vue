@@ -55,6 +55,7 @@
 <!-- CSS -->
 <style scoped>
 	.contact-field {
-		margin-top: -20px;
+
+		margin-top: -220px;
 	}
 </style>

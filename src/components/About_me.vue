@@ -1,9 +1,9 @@
 <template>
-<div v-if="about_me_on == 1" class="contact-field">
-	<v-card horizontal>
-		<v-card-row img="http://davedeveloper.eu/img/laptop.jpg" height="130px"></v-card-row>
+<div v-if="about_me_on == 1" >
+	<v-card class="contact-field" horizontal>
+		<v-card-row img="http://davedeveloper.eu/img/tablet-praca.jpg" height="230px"></v-card-row>
 		<v-card-column>
-			<v-card-row height="75px" class="blue-grey darken-4 white--text">
+			<v-card-row height="auto" class="blue-grey darken-4 white--text">
 				<v-card-text>
 					<strong>I am a web developer from Warsaw, Poland and currently living in Torun. I enjoy building everything from small business sites to rich interactive web apps. If you are a business seeking a web presence or an employer looking to hire, you can get in touch with me here.</strong>
 
@@ -46,5 +46,8 @@
 </script>
 <!-- CSS -->
 <style scoped>
-
+	.contact-field{
+		width: 90vw;
+		margin-top: -40px;
+	}
 </style>

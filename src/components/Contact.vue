@@ -8,8 +8,8 @@
 						<v-btn icon="icon" @click.native="dialog = false" light>
 							<v-icon>close</v-icon>
 						</v-btn>
-						<v-toolbar-title>Settings</v-toolbar-title>
-						<v-btn light flat @click.native="dialog = false">Save</v-btn>
+						<v-toolbar-title>Contact</v-toolbar-title>
+
 					</v-toolbar>
 				</v-card-row>
 				<v-divider></v-divider>
@@ -51,11 +51,11 @@
 									<v-list-tile>
 										<v-list-tile-action></v-list-tile-action>
 										<v-list-tile-content>
-											<v-list-tile-title>(323) 555-6789</v-list-tile-title>
-											<v-list-tile-sub-title>Work</v-list-tile-sub-title>
+											<v-list-tile-title>davedeveloper.eu</v-list-tile-title>
+											<v-list-tile-sub-title>Portfolio</v-list-tile-sub-title>
 										</v-list-tile-content>
 										<v-list-tile-action>
-											<v-icon dark>chat</v-icon>
+											<v-icon dark>thumb_up</v-icon>
 										</v-list-tile-action>
 									</v-list-tile>
 								</v-list-item>
@@ -97,25 +97,7 @@
 					</v-flex>
 				</v-layout>
 				<v-divider></v-divider>
-				<v-list three-line subheader>
-					<v-subheader>User Controls</v-subheader>
-					<v-list-item>
-						<v-list-tile avatar>
-							<v-list-tile-content>
-								<v-list-tile-title>Content filtering</v-list-tile-title>
-								<v-list-tile-sub-title>Set the content filtering level to restrict appts that can be downloaded</v-list-tile-sub-title>
-							</v-list-tile-content>
-						</v-list-tile>
-					</v-list-item>
-					<v-list-item>
-						<v-list-tile avatar>
-							<v-list-tile-content>
-								<v-list-tile-title>Password</v-list-tile-title>
-								<v-list-tile-sub-title>Require password for purchase or use password to restrict purchase</v-list-tile-sub-title>
-							</v-list-tile-content>
-						</v-list-tile>
-					</v-list-item>
-				</v-list>
+
 			</v-card>
 		</v-dialog>
 	</div>

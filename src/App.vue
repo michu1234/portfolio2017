@@ -47,14 +47,14 @@
 				</v-list>
 			</v-card>
 		</v-navigation-drawer>
-		<v-toolbar  fixed class="grey darken-4" light>
+<v-toolbar v-on:click="onoff_contact_input" fixed class="grey darken-4" light>
 			<v-toolbar-side-icon light @click.native.stop.prevent="drawer = !drawer"></v-toolbar-side-icon>
-			<v-toolbar-title>DaveDev.De</v-toolbar-title>
-			<v-toolbar-items>
+			<v-toolbar-title>DaveDeveloper.eu</v-toolbar-title>
+	<v-toolbar-items v-on:click="onoff_find_me_card">
 				<v-toolbar-item>About Me</v-toolbar-item>
-				<v-toolbar-item v-on:click.native="onoff_find_me_card">Find Me</v-toolbar-item>
+		<v-toolbar-item>Find Me</v-toolbar-item>
 				<v-menu origin="center center" transition="v-scale-transition" bottom>
-					<v-btn v-on:click.native="onoff_contact_input" primary light slot="activator">Contact Me</v-btn>
+					<v-btn primary light slot="activator">Contact Me</v-btn>
 				</v-menu>
 				<v-menu offset-y left bottom origin="top right" transition="v-scale-transition">
 					<v-btn icon light slot="activator">
@@ -91,7 +91,7 @@
 					<gallery10 :onoff10="onoff_gallery10" v-on:nulled="update_gallery"></gallery10>
 					<gallery11 :onoff11="onoff_gallery11" v-on:nulled="update_gallery"></gallery11>
 					<contact_field :onoff_contact="onoff_contact1" v-on:nulled="update_gallery"></contact_field>
-					<find_me :onoff_find_me="onoff_find_me" v-on:nulled="update_gallery"></find_me>
+					<find_me :onoff_find_me1="onoff_find_me" v-on:nulled="update_gallery"></find_me>
 					<about_me :about_me_on="onoff_about_me" v-on:nulled="update_gallery"></about_me>
 					<!--v-router-->
 				</div>
@@ -271,8 +271,8 @@
 				this.onoff_find_me = 0;
 				this.onoff_todo = 0;
 			},
-			onoff_find_me_card: function() {
-				this.onoff_find_me = 1;
+			onoff_find_me_card: function(e) {
+				e.target.textContent == "Find Me" ? this.onoff_find_me = 1 : this.onoff_find_me = 0;
 			},
 			onoff_todo_card: function() {
 				this.onoff_todo = 1;

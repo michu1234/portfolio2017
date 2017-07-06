@@ -28,18 +28,18 @@
 	</v-card-title>
 	</v-card-row>
 		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/portfolio.jpg" height="350px"></v-card-row>
-		<v-card-text class="pink darken-1 darken-4 white--text">
+		<v-card-text class="pink darken-4 white--text">
 			<div v-text="card_text"></div>
 			<div v-text="divider"></div>
 			<div v-text="technologies"></div>
 	</v-card-text>
-		<v-card-row actions class="pink darken-3darken-1 mt-0">
+		<v-card-row actions class="pink darken-3 mt-0">
 			<a href="http://dave.davedeveloper.eu" target="_blank"><v-btn flat class="white--text"><v-icon>input</v-icon>&nbsp; DEMO</v-btn></a>
 			<v-spacer></v-spacer>
-			<v-btn icon>
-				<v-icon class="white--text">explore</v-icon>
-				<i class="icon-github-circled"></i>
-	</v-btn>
+			<a href="https://github.com/michu1234/port" target="_blank"> 	<v-btn icon>
+					<v-icon class="white--text">explore</v-icon>
+					<i class="icon-github-circled"></i>
+					</v-btn></a>
 	</v-card-row>
 	</v-card>
 

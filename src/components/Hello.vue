@@ -133,7 +133,7 @@
 <style scoped>
 	.skills-list {
 		position: absolute;
-		top: -210px;
+		top: -235px;
 		right: 50px;
 		z-index: 1;
 		width: 400px;

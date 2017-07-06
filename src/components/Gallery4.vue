@@ -34,12 +34,12 @@
 			<div v-text="technologies"></div>
 	</v-card-text>
 		<v-card-row actions class="light-blue darken-1 mt-0">
-			<v-btn flat class="white--text">Try DEMO</v-btn>
+			<a href="http://dentalclinic.davedeveloper.eu" target="_blank"><v-btn flat class="white--text">Try DEMO</v-btn></a>
 			<v-spacer></v-spacer>
-			<v-btn icon>
-				<v-icon class="white--text">explore</v-icon>
-				<i class="icon-github-circled"></i>
-	</v-btn>
+			<a href="https://github.com/michu1234/medical" target="_blank"><v-btn icon>
+					<v-icon class="white--text">explore</v-icon>
+					<i class="icon-github-circled"></i>
+					</v-btn></a>
 	</v-card-row>
 	</v-card>
 

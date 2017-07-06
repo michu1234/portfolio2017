@@ -46,7 +46,7 @@ Vue.config.productionTip = false
 Vue.use(VueGoogleMaps, {
 	load: {
 		key: 'AIzaSyD__5V4Alpsok-i4prz1OVsNGU4XzmqlEs',
-		v: 'OPTIONAL VERSION NUMBER',
+		v: '3.29',
 		// libraries: 'places', //// If you need to use place input
 	}
 });

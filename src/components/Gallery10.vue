@@ -4,9 +4,9 @@
 	<!--	PORTFOLIO  -->
 
 	<v-card v-if="onoff10 == 10">
-		<v-card-row class="blue-grey darken-2" light>
+		<v-card-row class="pink darken-4" light>
 			<v-card-title>
-				<span class="white--text">Web Developer Portfolio</span>
+				<span class="white--text">Outdoor Cinema</span>
 				<v-spacer></v-spacer>
 				<v-menu id="space" bottom left origin="top right" transition="v-scale-transition">
 					<v-btn icon="icon" slot="activator" class="white--text">
@@ -28,18 +28,18 @@
 	</v-card-title>
 	</v-card-row>
 		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/cinema.jpg" height="350px"></v-card-row>
-		<v-card-text class="blue-grey darken-2 white--text">
+		<v-card-text class="pink darken-4 white--text">
 			<div v-text="card_text"></div>
 			<div v-text="divider"></div>
 			<div v-text="technologies"></div>
 	</v-card-text>
-		<v-card-row actions class="blue-grey lighten-3 mt-0">
-			<v-btn flat class="white--text">Try DEMO</v-btn>
+		<v-card-row actions class="pink darken-3 mt-0">
+			<a href="http://cinema.davedeveloper.eu" target="_blank"><v-btn flat class="white--text">Try DEMO</v-btn></a>
 			<v-spacer></v-spacer>
-			<v-btn icon>
-				<v-icon class="white--text">explore</v-icon>
-				<i class="icon-github-circled"></i>
-	</v-btn>
+			<a href="https://github.com/michu1234/OutdoorCinema" target="_blank">	<v-btn icon>
+					<v-icon class="white--text">explore</v-icon>
+					<i class="icon-github-circled"></i>
+					</v-btn></a>
 	</v-card-row>
 	</v-card>
 
@@ -55,7 +55,7 @@
 			return {
 				card_text: 'Portfolio web developera, zawierające listę projektów oraz dane kontaktowe. W tle strony umieszczono dwa rodzaje animacji wykonanych przy pomocy biblioteki P5.js.',
 				divider: '-----------------------',
-				technologies: 'Technologie: HTML5, CSS3, jQuery, P5.js'
+				technologies: 'Technologie: HTML5, CSS3, jQuery, Bootstrap'
 			}
 		},
 		methods: {
@@ -87,5 +87,8 @@
 	i {
 		color: #fff;
 		font-size: 21px;
+	}
+	a {
+		text-decoration: none;
 	}
 </style>

@@ -4,7 +4,7 @@
 	<!--	PORTFOLIO  -->
 
 	<v-card v-if="onoff6 == 6">
-		<v-card-row class="teal darken-3" light>
+		<v-card-row class="pink darken-4" light>
 			<v-card-title>
 				<span class="white--text">Sound Production ver. 2</span>
 				<v-spacer></v-spacer>
@@ -27,19 +27,19 @@
 	</v-menu>
 	</v-card-title>
 	</v-card-row>
-		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/sound.jpg" height="350px"></v-card-row>
-		<v-card-text class="teal darken-3 white--text">
+		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/music.jpg" height="350px"></v-card-row>
+		<v-card-text class="pink darken-4 white--text">
 			<div v-text="card_text"></div>
 			<div v-text="divider"></div>
 			<div v-text="technologies"></div>
 	</v-card-text>
-		<v-card-row actions class="teal lighten-2 mt-0">
-			<v-btn flat class="white--text">Try DEMO</v-btn>
+		<v-card-row actions class="pink darken-3 mt-0">
+			<a href="http://soundproduction2.davedeveloper.eu/" target="_blank"><v-btn flat class="white--text">Try DEMO</v-btn></a>
 			<v-spacer></v-spacer>
-			<v-btn icon>
+			<a href="https://github.com/michu1234/sound_ver_2" target="_blank">	<v-btn icon>
 				<v-icon class="white--text">explore</v-icon>
 				<i class="icon-github-circled"></i>
-	</v-btn>
+	</v-btn></a>
 	</v-card-row>
 	</v-card>
 
@@ -87,5 +87,8 @@
 	i {
 		color: #fff;
 		font-size: 21px;
+	}
+	a {
+		text-decoration: none;
 	}
 </style>

@@ -1,5 +1,5 @@
 <template>
-<div v-if="onoff_find_me" class="find_me">
+<div v-if="onoff_find_me1" class="find_me">
 	<v-card >
 		<v-card-row class="blue-grey darken-4">
 			<v-card-title>
@@ -44,7 +44,7 @@
 			<gmap-map
 								:center="center"
 								:zoom="7"
-								style="min-width: 100%; height: 400px"
+								style="min-width: 100%; height: 350px"
 								>
 				<gmap-marker
 										 :key="index"
@@ -70,7 +70,7 @@
 <script>
 
 	export default {
-		props: ['onoff_find_me'],
+		props: ['onoff_find_me1'],
 		data() {
 			return {
 				center: {lat: 53.0, lng: 19.0},
@@ -92,13 +92,12 @@
 <style scoped>
 	.find_me {
 	 width: 70vw;
-	 position: absolute;
-	 right: 10px;
-	 top: 60px;
+	 margin-top: -230px;
+	 margin-left: auto;
 	}
 	#map {
 		min-width: 100%;
-		height: 400px;
+		max-height: 500px;
 	}
 
 

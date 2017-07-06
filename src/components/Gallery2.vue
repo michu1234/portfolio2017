@@ -4,9 +4,9 @@
 	<!--	PORTFOLIO  -->
 
 	<v-card v-if="onoff2 == 2">
-		<v-card-row class="cyan darken-3" light>
+		<v-card-row class="pink darken-4" light>
 			<v-card-title>
-				<span class="white--text">ToDO App</span>
+				<span class="white--text">ToDO APP</span>
 				<v-spacer></v-spacer>
 				<v-menu id="space" bottom left origin="top right" transition="v-scale-transition">
 					<v-btn icon="icon" slot="activator" class="white--text">
@@ -28,18 +28,18 @@
 	</v-card-title>
 	</v-card-row>
 		<v-card-row class="gallery__image" img="http://davedeveloper.eu/img/todo.jpg" height="350px"></v-card-row>
-		<v-card-text class="cyan darken-3 white--text">
+		<v-card-text class="pink darken-4 white--text">
 			<div v-text="card_text"></div>
 			<div v-text="divider"></div>
 			<div v-text="technologies"></div>
 	</v-card-text>
-		<v-card-row actions class="cyan darken-1 mt-0">
+		<v-card-row actions class="pink darken-3 mt-0">
 			<a href="http://todo.davedeveloper.eu" target="_blank"><v-btn flat class="white--text"><v-icon>input</v-icon>&nbsp; DEMO</v-btn></a>
 			<v-spacer></v-spacer>
-			<v-btn icon>
-				<v-icon class="white--text">explore</v-icon>
-				<i class="icon-github-circled"></i>
-	</v-btn>
+			<a href="https://github.com/michu1234/To_DO" target="_blank">	<v-btn icon>
+					<v-icon class="white--text">explore</v-icon>
+					<i class="icon-github-circled"></i>
+					</v-btn></a>
 	</v-card-row>
 	</v-card>
 
