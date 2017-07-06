@@ -87,8 +87,8 @@
 											<v-icon class="indigo--text">location_on</v-icon>
 										</v-list-tile-action>
 										<v-list-tile-content>
-											<v-list-tile-title>Kozacka 69/7</v-list-tile-title>
-											<v-list-tile-sub-title>Toruń, 87-102</v-list-tile-sub-title>
+											<v-list-tile-title>Kozacka 64/9</v-list-tile-title>
+											<v-list-tile-sub-title>Toruń, 87-109</v-list-tile-sub-title>
 										</v-list-tile-content>
 									</v-list-tile>
 								</v-list-item>

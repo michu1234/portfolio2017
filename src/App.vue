@@ -13,7 +13,7 @@
 					<v-list-tile avatar tag="div">
 						<v-list-tile-avatar> <img src="http://davedeveloper.eu/img/profile-img222.png" /> </v-list-tile-avatar>
 						<v-list-tile-content>
-							<v-list-tile-title>Dawid Nawrocki</v-list-tile-title>
+							<v-list-tile-title v-on:click="not_on_firefox">Dawid Nawrocki</v-list-tile-title>
 						</v-list-tile-content>
 						<v-list-tile-action>
 							<v-btn icon dark @click.native.stop="mini = !mini">
@@ -73,11 +73,11 @@
 		<main>
 			<v-container v-on:mousemove="move_small_rhino" fluid>
 				<div v-on:mousemove="move_rhino">
-					<div v-if="onoff_clouds" class="clouds"></div> <img class="hidden-sm-and-down" v-bind:style="{transform: transform_rhino, position: absolute2, bottom: small_rhino_b + 'px', left: small_rhino_l + 'px' }" src="http://davedeveloper.eu/img/adult.svg" alt=""> <img class="hidden-xs-only" v-bind:style="{position: absolute2, top: rhino_t + 'px', right: rhino_r + 'px'}" src="http://davedeveloper.eu/img/big-adult.svg" alt="">
+					<div v-if="onoff_clouds" class="clouds"></div> <img class="hidden-sm-and-down not_on_firefox" v-bind:style="{display: display_rihno, transform: transform_rhino, position: absolute2, bottom: small_rhino_b + 'px', left: small_rhino_l + 'px' }" src="http://davedeveloper.eu/img/adult.svg" alt=""> <img class="hidden-xs-only not_on_firefox" v-bind:style="{display: display_rihno, position: absolute2, top: rhino_t + 'px', right: rhino_r + 'px'}" src="http://davedeveloper.eu/img/big-adult.svg" alt="">
 					<div v-on:click="off_clouds" class="title">
 						<v-btn outline class="indigo--text">Turn off clouds!</v-btn>
 					</div>
-					<router-view></router-view>
+					<router-view class="hello"></router-view>
 					<to_do :onoff0="onoff_todo" v-on:nulled="update_gallery"></to_do>
 					<gallery :onoff="onoff_gallery1" v-on:nulled="update_gallery"></gallery>
 					<gallery2 :onoff2="onoff_gallery2" v-on:nulled="update_gallery"></gallery2>
@@ -93,6 +93,7 @@
 					<contact_field :onoff_contact="onoff_contact1" v-on:nulled="update_gallery"></contact_field>
 					<find_me :onoff_find_me1="onoff_find_me" v-on:nulled="update_gallery"></find_me>
 					<about_me :about_me_on="onoff_about_me" v-on:nulled="update_gallery"></about_me>
+					<translator></translator>
 					<!--v-router-->
 				</div>
 			</v-container>
@@ -125,6 +126,7 @@
 		, data() {
 			return {
 				e2: 1,
+				display_rihno: "",
 				transform_rhino: "scale(0.5)"
 				, absolute2: "absolute"
 				, rhino_r: -400
@@ -277,7 +279,7 @@
 			onoff_todo_card: function() {
 				this.onoff_todo = 1;
 			}
-			, hello_dialog: window.onload = function () {
+			, hello_dialog: window.load = function () {
 				console.log(":-) HELLO EVERYBODY! :-)");
 			}
 			, onoff_contact_input: function (e) {
@@ -304,6 +306,12 @@
 			}
 			, about_me_onoff: function (e) {
 				e.target.textContent == "About Me" ? this.onoff_about_me = 1 : this.onoff_about_me = 0;
+			}
+		},computed: {
+			not_on_firefox: window.load = function(){
+				if (navigator.userAgent.indexOf("Firefox") > -1) {
+					this.display_rihno = "none";
+				}
 			}
 		}
 	}
@@ -347,8 +355,6 @@
 		position: absolute;
 	}
 
-
-
 	.clouds {
 		background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
 		z-index: 0;
@@ -382,4 +388,7 @@
 		z-index: 1000;
 	}
 
+	.hello {
+		margin-top: -50px;
+	}
 </style>

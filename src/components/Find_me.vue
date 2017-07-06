@@ -92,7 +92,7 @@
 <style scoped>
 	.find_me {
 	 width: 70vw;
-	 margin-top: -230px;
+	 margin-top: -190px;
 	 margin-left: auto;
 	}
 	#map {

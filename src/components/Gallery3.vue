@@ -34,7 +34,7 @@
 			<div v-text="technologies"></div>
 	</v-card-text>
 		<v-card-row actions class="pink darken-3 mt-0">
-			<a href="http://dave.davedeveloper.eu" target="_blank"><v-btn flat class="white--text"><v-icon>input</v-icon>&nbsp; DEMO</v-btn></a>
+			<a href="http://dev.davedeveloper.eu" target="_blank"><v-btn flat class="white--text"><v-icon>input</v-icon>&nbsp; DEMO</v-btn></a>
 			<v-spacer></v-spacer>
 			<a href="https://github.com/michu1234/port" target="_blank"> 	<v-btn icon>
 					<v-icon class="white--text">explore</v-icon>
