@@ -126,7 +126,7 @@
 		, data() {
 			return {
 				e2: 1,
-				display_rihno: "",
+				display_rihno: "block",
 				transform_rhino: "scale(0.5)"
 				, absolute2: "absolute"
 				, rhino_r: -400
@@ -306,15 +306,15 @@
 			}
 			, about_me_onoff: function (e) {
 				e.target.textContent == "About Me" ? this.onoff_about_me = 1 : this.onoff_about_me = 0;
-			}
-		},computed: {
+			},
 			not_on_firefox: window.load = function(){
 				if (navigator.userAgent.indexOf("Firefox") > -1) {
 					this.display_rihno = "none";
 				}
 			}
 		}
-	}
+		}
+
 </script>
 <!-- CSS -->
 <style scoped>

@@ -59,9 +59,7 @@
 				<span class="underline" light v-tooltip:bottom="{ html: '★★★' }" primary>{{Vue}},</span> <span light v-tooltip:bottom="{ html: '★★★★' }" primary>{{jQuery}},</span> <span light v-tooltip:bottom="{ html: '★★★★' }" primary>{{P5}},</span> <span light v-tooltip:bottom="{ html: '★★★★★' }" primary>{{CSS3}},</span> <span light v-tooltip:bottom="{ html: '★★★★★' }" primary>{{HTML5}}</span> </p>
 
 			<span class="social-media"><a href="https://github.com/michu1234" target="_blank"><i class="icon-github-circled"></i></a><a href="https://www.linkedin.com/in/dawid-nawrocki-1a333913b/" target="_blank"><i class="icon-linkedin-squared"></i></a><a href="https://codepen.io/DaveDeveloperDe/" target="_blank"><i class="icon-codepen"></i></a><a href="https://join.slack.com/dev-info-team/shared_invite/MjAwMjQwNTA0NzQyLTE0OTc3MzczODktNmJjY2U1NjZkMQ" target="_blank"><i class="icon-slack"></i></a>
-    	<i class="clasa"></i>
-    	<i class="clasa"></i>
-    	<i class="clasa"></i></span> </div>
+    	</span> </div>
 	</div>
 </template>
 <!-- SCRIPT -->
@@ -160,7 +158,7 @@
 	p {
 		margin: 0 auto;
 		width: 80vw;
-		padding: 15px;
+		padding: 5px 0 10px 0;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 1.5em;
 		text-shadow: 0px -1px 0px #000;
@@ -172,14 +170,9 @@
 	}
 
 	a {
-		color: #fff;
+		color: #919191;
 	}
-	.social-media {
-		display: flex;
-		justify-content: center;
-		font-size: 20px;
-		color: white;
-	}
+
 	i {
 		transition: all .3s;
 	}
@@ -188,5 +181,23 @@
 	}
 	.underline {
 		text-decoration: underline;
+	}
+	.social-media {
+		text-align: center;
+		font-size: 20px;
+		color: #fff;
+		display: flex;
+		padding: 0;
+	  margin: 0;
+		justify-content: center;
+	}
+	.social-media a {
+			color: #fff;
+	}
+	[data-tooltip][data-tooltip-location=bottom]:before {
+		top: 35%;
+		height: 26px;
+		background: transparent;
+		box-shadow: 0 0 2px #fff;
 	}
 </style>
