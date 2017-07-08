@@ -17,6 +17,7 @@ import Find_me from './components/Find_me'
 import About_me from './components/About_me'
 import ToDO from './components/ToDO'
 import Translator from './components/Translator'
+import Word_translated from './components/Word_translated'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import '../css/fontello.css'
@@ -42,6 +43,7 @@ Vue.component('find_me', Find_me)
 Vue.component('about_me', About_me)
 Vue.component('to_do', ToDO)
 Vue.component('translator', Translator)
+Vue.component('word_translated', Word_translated)
 Vue.config.productionTip = false
 
 

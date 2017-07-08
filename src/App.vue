@@ -13,7 +13,7 @@
 					<v-list-tile avatar tag="div">
 						<v-list-tile-avatar> <img src="http://davedeveloper.eu/img/profile-img222.png" /> </v-list-tile-avatar>
 						<v-list-tile-content>
-							<v-list-tile-title v-on:click="not_on_firefox">Dawid Nawrocki</v-list-tile-title>
+							<v-list-tile-title v-if="not_on_firefox">Dawid Nawrocki</v-list-tile-title>
 						</v-list-tile-content>
 						<v-list-tile-action>
 							<v-btn icon dark @click.native.stop="mini = !mini">
@@ -93,7 +93,7 @@
 					<contact_field :onoff_contact="onoff_contact1" v-on:nulled="update_gallery"></contact_field>
 					<find_me :onoff_find_me1="onoff_find_me" v-on:nulled="update_gallery"></find_me>
 					<about_me :about_me_on="onoff_about_me" v-on:nulled="update_gallery"></about_me>
-					<translator></translator>
+					<translator :show2="onoff_translator" v-on:nulled="update_gallery"></translator>
 					<!--v-router-->
 				</div>
 			</v-container>
@@ -104,11 +104,11 @@
 			<v-btn class="hidden-sm-and-down" v-on:click.native="onoff_todo_card" primary fab small dark>
 				<v-icon>done_all</v-icon>
 			</v-btn>
-			<v-btn class="hidden-sm-and-down" primary fab small dark>
-				<v-icon>code</v-icon>
+			<v-btn class="hidden-sm-and-down" v-on:click.native="translator_onoff" primary fab small dark>
+				<v-icon>translate</v-icon>
 			</v-btn>
 			<v-btn class="hidden-sm-and-down" primary fab small dark>
-				<v-icon>power_settings_new</v-icon>
+				<v-icon>public</v-icon>
 			</v-btn>
 			<v-spacer></v-spacer>
 			<div class="hidden-sm-and-down"><small>powered by Vue.js | Dawid Nawrocki © {{ new Date().getFullYear() }}</small></div>
@@ -125,8 +125,9 @@
 		}
 		, data() {
 			return {
+				onoff_translator: 0,
 				e2: 1,
-				display_rihno: "block",
+				display_rihno: "",
 				transform_rhino: "scale(0.5)"
 				, absolute2: "absolute"
 				, rhino_r: -400
@@ -272,6 +273,7 @@
 				this.onoff_contact1 = 0;
 				this.onoff_find_me = 0;
 				this.onoff_todo = 0;
+				this.onoff_translator= 0;
 			},
 			onoff_find_me_card: function(e) {
 				e.target.textContent == "Find Me" ? this.onoff_find_me = 1 : this.onoff_find_me = 0;
@@ -279,7 +281,7 @@
 			onoff_todo_card: function() {
 				this.onoff_todo = 1;
 			}
-			, hello_dialog: window.load = function () {
+			, hello_dialog: window.onload = function () {
 				console.log(":-) HELLO EVERYBODY! :-)");
 			}
 			, onoff_contact_input: function (e) {
@@ -303,11 +305,15 @@
 					this.small_rhino_b = -200 + mouseY;
 					this.small_rhino_l = -550 + mouseX;
 				}, 150)
+			},
+			translator_onoff: function() {
+				this.onoff_translator = 1;
 			}
 			, about_me_onoff: function (e) {
 				e.target.textContent == "About Me" ? this.onoff_about_me = 1 : this.onoff_about_me = 0;
-			},
-			not_on_firefox: window.load = function(){
+			}
+		}, computed: {
+			not_on_firefox: function(){
 				if (navigator.userAgent.indexOf("Firefox") > -1) {
 					this.display_rihno = "none";
 				}

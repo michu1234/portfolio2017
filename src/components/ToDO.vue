@@ -1,8 +1,8 @@
 <template>
-<v-flex class="to-do" xs12 sm6 offset-sm3>
+<v-flex class="to-do container" xs12 sm6 offset-sm3>
 	<v-card v-if="onoff0 == 1">
 		<v-toolbar class="cyan" light>
-			<v-toolbar-side-icon light></v-toolbar-side-icon>
+			<v-icon>done_all</v-icon>
 			<v-toolbar-title>TODO APP</v-toolbar-title>
 			<v-menu id="marriot" bottom left origin="top right">
 				<v-btn icon="icon" slot="activator" class="white--text">
