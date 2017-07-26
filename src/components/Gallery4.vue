@@ -88,4 +88,7 @@
 		color: #fff;
 		font-size: 21px;
 	}
+	a {
+		text-decoration: none;
+	}
 </style>

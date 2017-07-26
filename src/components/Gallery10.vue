@@ -53,7 +53,7 @@
 		props: ['onoff10'],
 		data () {
 			return {
-				card_text: 'Portfolio web developera, zawierające listę projektów oraz dane kontaktowe. W tle strony umieszczono dwa rodzaje animacji wykonanych przy pomocy biblioteki P5.js.',
+				card_text: 'Responsywna strona internetowa stworzona przy pomocy frameworka Bootstrap. Wykonana na podstawie projektu w PSD. Podstawowe sekcje plus karuzela/slider.',
 				divider: '-----------------------',
 				technologies: 'Technologie: HTML5, CSS3, jQuery, Bootstrap'
 			}

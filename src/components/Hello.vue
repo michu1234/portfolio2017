@@ -1,7 +1,7 @@
 <template>
 	<div class="hello">
 		<div class="welcome">
-			<h1>{{ msg }}</h1>
+			<h1 class="header">{{ msg }}</h1>
 			<v-flex v-if="skills" class="skills-list" xs12 sm6 offset-sm3>
 				<v-card>
 					<v-toolbar class="light-blue" light>
@@ -65,62 +65,54 @@
 <!-- SCRIPT -->
 <script>
 	export default {
-		name: 'hello'
-		, data() {
+		name: 'hello',
+		data() {
 			return {
-				skills: false
-				, msg: 'Dawid Nawrocki'
-				, link: "Front-end developer"
-				, JavaScript: "JavaScript"
-				, Vue: "Vue.js"
-				, jQuery: "jQuery"
-				, P5: "P5.js"
-				, CSS3: "CSS3"
-				, HTML5: "HTML5"
-				, items: [
-					{
-						icon: 'check_box'
-						, iconClass: 'grey lighten-1 white--text'
-						, title: 'HTML5'
-						, subtitle: 'Clean markup with HTML5 semantic tags'
-					}
-					, {
-						icon: 'check_box'
-						, iconClass: 'grey lighten-1 white--text'
-						, title: 'CSS'
-						, subtitle: 'RWD or Bootstrap, Vuetify, Foundation etc.'
-					}
-					, {
-						icon: 'check_box'
-						, iconClass: 'grey lighten-1 white--text'
-						, title: 'JavaScript'
-						, subtitle: '+ AJAX & JSON'
-					}
-					, {
-						icon: 'check_box'
-						, iconClass: 'grey lighten-1 white--text'
-						, title: 'Vue.js | jQuery | P5.js'
-						, subtitle: 'Modern javascript frameworks and libraries'
-					}
-			]
-				, items2: [
-					{
-						icon: 'assignment'
-						, iconClass: 'blue white--text'
-						, title: 'Sass / Less'
-						, subtitle: 'with BEM / SMACKS / OOCSS'
-					}
-					, {
-						icon: 'call_to_action'
-						, iconClass: 'amber white--text'
-						, title: 'Gulp / GIT / JIRA'
-						, subtitle: '...and more...'
-					}
-			, ]
+				skills: false,
+				msg: 'Dawid Nawrocki',
+				link: "Front-end developer",
+				JavaScript: "JavaScript",
+				Vue: "Vue.js",
+				jQuery: "jQuery",
+				P5: "P5.js",
+				CSS3: "CSS3",
+				HTML5: "HTML5",
+				items: [{
+					icon: 'check_box',
+					iconClass: 'grey lighten-1 white--text',
+					title: 'HTML5',
+					subtitle: 'Clean markup with HTML5 semantic tags'
+				}, {
+					icon: 'check_box',
+					iconClass: 'grey lighten-1 white--text',
+					title: 'CSS',
+					subtitle: 'RWD or Bootstrap, Vuetify, Foundation etc.'
+				}, {
+					icon: 'check_box',
+					iconClass: 'grey lighten-1 white--text',
+					title: 'JavaScript',
+					subtitle: '+ AJAX & JSON'
+				}, {
+					icon: 'check_box',
+					iconClass: 'grey lighten-1 white--text',
+					title: 'Vue.js | jQuery | P5.js',
+					subtitle: 'Modern javascript frameworks and libraries'
+				}],
+				items2: [{
+					icon: 'assignment',
+					iconClass: 'blue white--text',
+					title: 'Sass / Less',
+					subtitle: 'with BEM / SMACKS / OOCSS'
+				}, {
+					icon: 'call_to_action',
+					iconClass: 'amber white--text',
+					title: 'Gulp / GIT / JIRA',
+					subtitle: '...and more...'
+				}, ]
 			}
-		}
-		, methods: {
-			toggles: function (e) {
+		},
+		methods: {
+			toggles: function(e) {
 				e.preventDefault();
 				this.skills = !this.skills;
 			}
@@ -176,28 +168,39 @@
 	i {
 		transition: all .3s;
 	}
+
 	i:hover {
 		color: #000052;
 	}
+
 	.underline {
 		text-decoration: underline;
 	}
+
 	.social-media {
 		text-align: center;
 		font-size: 20px;
 		color: #fff;
 		display: flex;
 		padding: 0;
-	  margin: 0;
+		margin: 0;
 		justify-content: center;
 	}
+
 	.social-media a {
-			color: #fff;
+		color: #fff;
 	}
+
 	[data-tooltip][data-tooltip-location=bottom]:before {
 		top: 35%;
 		height: 26px;
 		background: transparent;
 		box-shadow: 0 0 2px #fff;
+	}
+
+	@media screen and (max-width: 600px) {
+		.header {
+			font-size: 40px;
+		}
 	}
 </style>

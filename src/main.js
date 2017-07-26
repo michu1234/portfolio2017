@@ -18,6 +18,7 @@ import About_me from './components/About_me'
 import ToDO from './components/ToDO'
 import Translator from './components/Translator'
 import Word_translated from './components/Word_translated'
+import News from './components/News'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import '../css/fontello.css'
@@ -44,6 +45,7 @@ Vue.component('about_me', About_me)
 Vue.component('to_do', ToDO)
 Vue.component('translator', Translator)
 Vue.component('word_translated', Word_translated)
+Vue.component('news', News)
 Vue.config.productionTip = false
 
 
