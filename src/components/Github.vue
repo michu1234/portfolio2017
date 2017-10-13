@@ -1,7 +1,6 @@
 <template>
   <div id='github'>
     <v-layout row>
-      <v-flex xs12 sm6 offset-sm3>
         <v-card>
           <v-toolbar color="cyan" dark>
             <v-toolbar-side-icon @click.native="slideIn"></v-toolbar-side-icon>
@@ -63,7 +62,7 @@
         },
         slideOut() {
          let slider = document.querySelector('#github');
-         slider.style.right = "-670" + "px";
+         slider.style.right = "-415" + "px";
          slider.style.transition = ".3s";
         }
     },
@@ -81,9 +80,8 @@
   #github {
     position: absolute;
     margin-top: -180px;
-    right: -670px;
+    right: -415px;
     z-index: 4;
-    width: 1000px;
   }
 
   .github__slideIn {
@@ -106,7 +104,7 @@
   }
 
   .card {
-    max-width: 500px;
+    width: 500px;
     max-height: 78vh;
   }
 
@@ -136,7 +134,7 @@
     padding: 0 14px 0 0;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 700px) {
   #github {
     display:none;
   }
