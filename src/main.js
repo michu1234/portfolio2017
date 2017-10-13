@@ -1,6 +1,14 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import '../css/fontello.css'
+
+import App from './App'
+import router from './router'
+import * as VueGoogleMaps from 'vue2-google-maps';
+
 import Gallery from './components/Gallery'
 import Gallery2 from './components/Gallery2'
 import Gallery3 from './components/Gallery3'
@@ -19,13 +27,8 @@ import ToDO from './components/ToDO'
 import Translator from './components/Translator'
 import Word_translated from './components/Word_translated'
 import News from './components/News'
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
-import '../css/fontello.css'
-//import './components/map.js'
-import App from './App'
-import router from './router'
-import * as VueGoogleMaps from 'vue2-google-maps';
+import Loading from './components/Loading'
+import Github from './components/Github'
 
 Vue.use(Vuetify)
 Vue.component('gallery', Gallery)
@@ -45,7 +48,9 @@ Vue.component('about_me', About_me)
 Vue.component('to_do', ToDO)
 Vue.component('translator', Translator)
 Vue.component('word_translated', Word_translated)
+Vue.component('loading', Loading)
 Vue.component('news', News)
+Vue.component('github', Github)
 Vue.config.productionTip = false
 
 
@@ -56,8 +61,6 @@ Vue.use(VueGoogleMaps, {
 		// libraries: 'places', //// If you need to use place input
 	}
 });
-
-
 
 
 /* eslint-disable no-new */
