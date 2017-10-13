@@ -60,6 +60,7 @@
 <style scoped>
   .news {
     margin-top: -200px;
+    margin-right: 30px;
   }
 
 </style>

@@ -77,7 +77,7 @@
   .gallery {
     position: absolute;
     top: 10vh;
-    right: 2vw;
+    right: 6vw;
     max-width: 50vw;
     max-height: 100vh;
     box-shadow: 0 0 20px black;

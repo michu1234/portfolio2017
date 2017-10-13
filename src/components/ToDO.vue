@@ -139,8 +139,8 @@
 
   .to-do {
     position: absolute;
-    top: 1vh;
-    width: 95vw;
+    top: 6vh;
+    width: 93vw;
   }
 
   .selected {

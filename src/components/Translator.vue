@@ -91,6 +91,7 @@
 <style scoped>
   .translator {
     margin-top: -200px;
+    margin-right: 30px;
   }
 
 </style>
