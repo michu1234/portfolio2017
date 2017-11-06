@@ -30,7 +30,7 @@ import News from './components/News'
 import Loading from './components/Loading'
 import Github from './components/Github'
 
-Vue.use(Vuetify)
+
 Vue.component('gallery', Gallery)
 Vue.component('gallery2', Gallery2)
 Vue.component('gallery3', Gallery3)
@@ -54,6 +54,7 @@ Vue.component('github', Github)
 Vue.config.productionTip = false
 
 
+Vue.use(Vuetify)
 Vue.use(VueGoogleMaps, {
 	load: {
 		key: 'AIzaSyD__5V4Alpsok-i4prz1OVsNGU4XzmqlEs',
@@ -61,7 +62,6 @@ Vue.use(VueGoogleMaps, {
 		// libraries: 'places', //// If you need to use place input
 	}
 });
-
 
 
 new Vue({
