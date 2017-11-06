@@ -63,10 +63,18 @@ Vue.use(VueGoogleMaps, {
 });
 
 
-/* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
 	components: { App }
 })
+
+
+new Vue({
+	el: '#preloader',
+	router,
+	template: '<Loading/>',
+	  components: { Loading }
+  })

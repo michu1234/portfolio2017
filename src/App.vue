@@ -1,7 +1,6 @@
 <template>
 
-  <v-app v-on:click="about_me_onoff" id="example-2">
-    <loading v-if="loaded"></loading>
+  <v-app v-cloak v-on:click="about_me_onoff" id="example-2">
     <v-navigation-drawer temporary v-model="drawer" :mini-variant="mini" light>
       <v-list class="pa-0">
         <v-list-item v-if="mini">
@@ -64,7 +63,7 @@
             <v-icon class="hidden-xs-only">more_vert</v-icon>
           </v-btn>
           <v-list>
-            <v-list-item v-for="task in tasks" :key="item">
+            <v-list-item v-for="task in tasks" :key="task">
               <v-list-tile>
                 <v-list-tile-title v-text="task.title"></v-list-tile-title>
               </v-list-tile>
@@ -126,6 +125,7 @@
     </v-footer>
     </v-card>
   </v-app>
+
 </template>
 
 <!-- SCRIPT -->
@@ -137,7 +137,6 @@
     },
     data() {
       return {
-        loaded: true,
         onoff_news: 0,
         onoff_translator: 0,
         e2: 1,
@@ -314,10 +313,6 @@
           this.display_rihno = "none";
         }
       }
-    },
-    created: function () {
-      this.loaded = true;
-      setTimeout(() => this.loaded = false, 5000)
     }
   }
 
@@ -342,6 +337,10 @@
 
   #navigation-1 a {
     text-decoration: none;
+  }
+
+  img {
+    will-change: auto;
   }
 
   .icon--light {

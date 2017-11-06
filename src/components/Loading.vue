@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div v-if="loaded" class="background">
     <div class="rhino">
       <div class="head">
         <div class="ears"></div>
@@ -12,13 +12,17 @@
 </template>
 
 <!-- SCRIPT -->
-
+ 
 <script>
   export default {
     data() {
       return {
-
+         loaded: true,
       }
+    },
+    created: function () {
+      this.loaded = true;
+      setTimeout(() => this.loaded = false, 5000)
     }
   }
 
