@@ -176,7 +176,7 @@
           text: 'Informator'
         }, {
           icon: 'touch_app',
-          text: 'ToDO'
+          text: 'JobBoard'
         }, {
           divider: true
         }, {
@@ -238,7 +238,7 @@
       },
       onoff_gallery22: function (e) {
         e.target.textContent == " Informator " ? this.onoff_gallery1 = 1 : this.onoff_gallery1 = 0;
-        e.target.textContent == " ToDO " ? this.onoff_gallery2 = 2 : this.onoff_gallery2 = 0;
+        e.target.textContent == " JobBoard " ? this.onoff_gallery2 = 2 : this.onoff_gallery2 = 0;
         e.target.textContent == " Dev Portfolio " ? this.onoff_gallery3 = 3 : this.onoff_gallery3 = 0;
         e.target.textContent == " Dental Clinic " ? this.onoff_gallery4 = 4 : this.onoff_gallery4 = 0;
         e.target.textContent == " Sound Production ver. 1 " ? this.onoff_gallery5 = 5 : this.onoff_gallery5 = 0;

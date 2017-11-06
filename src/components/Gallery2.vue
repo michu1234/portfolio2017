@@ -27,19 +27,19 @@
           </v-menu>
         </v-card-title>
       </v-card-row>
-      <v-card-row class="gallery__image" img="http://davedeveloper.eu/img/todo.JPG" height="350px"></v-card-row>
+      <v-card-row class="gallery__image" img="http://davedeveloper.eu/img/jobboard.JPG" height="350px"></v-card-row>
       <v-card-text class="pink darken-4 white--text">
         <div v-text="card_text"></div>
         <div v-text="divider"></div>
         <div v-text="technologies"></div>
       </v-card-text>
       <v-card-row actions class="pink darken-3 mt-0">
-        <a href="http://todo.davedeveloper.eu" target="_blank">
+        <a href="http://job.davedeveloper.eu" target="_blank">
           <v-btn flat class="white--text">
             <v-icon>input</v-icon>&nbsp; DEMO</v-btn>
         </a>
         <v-spacer></v-spacer>
-        <a href="https://github.com/michu1234/To_DO" target="_blank">
+        <a href="https://github.com/michu1234/jobboard" target="_blank">
           <v-btn icon>
             <v-icon class="white--text">explore</v-icon>
             <i class="icon-github-circled"></i>
@@ -58,9 +58,9 @@
     props: ['onoff2'],
     data() {
       return {
-        card_text: 'Zarządzaj charmonogramem dnia. Możesz dodawać i usuwać zadania oraz zaznaczać te, które zdążyłeś już wykonać.',
+        card_text: 'Dodawaj ogłoszenia w czasie rzeczywistym. Prototyp aplikacji typu Job Board, dodający dane do Local Storage.',
         divider: '-----------------------',
-        technologies: 'Technologie: HTML5, CSS3, JavaScript, Vue.js, Bulma Framework'
+        technologies: 'Technologie: HTML5, CSS3, JavaScript, Vue.js, Vuetify, Miligram.io, LocalStorage'
       }
     },
     methods: {
