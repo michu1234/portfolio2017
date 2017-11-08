@@ -334,9 +334,7 @@
     background-size: contain, cover;
     overflow: hidden;
   }
-  ::-webkit-scrollbar {
-display: none;
-}
+
 
   #navigation-1 a {
     text-decoration: none;
