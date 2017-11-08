@@ -334,6 +334,9 @@
     background-size: contain, cover;
     overflow: hidden;
   }
+  ::-webkit-scrollbar {
+display: none;
+}
 
   #navigation-1 a {
     text-decoration: none;
@@ -362,7 +365,7 @@
   }
 
   .clouds {
-    background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+    background: transparent url(../static/clouds3.png) repeat top center;
     z-index: 0;
     filter: grayscale(10%) drop-shadow(0 0 20px purple);
     position: absolute;

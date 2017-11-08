@@ -27,7 +27,6 @@ import ToDO from './components/ToDO'
 import Translator from './components/Translator'
 import Word_translated from './components/Word_translated'
 import News from './components/News'
-import Loading from './components/Loading'
 import Github from './components/Github'
 
 
@@ -48,7 +47,6 @@ Vue.component('about_me', About_me)
 Vue.component('to_do', ToDO)
 Vue.component('translator', Translator)
 Vue.component('word_translated', Word_translated)
-Vue.component('loading', Loading)
 Vue.component('news', News)
 Vue.component('github', Github)
 Vue.config.productionTip = false
@@ -64,17 +62,12 @@ Vue.use(VueGoogleMaps, {
 });
 
 
+setTimeout(function() {
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
 	components: { App }
 })
+},1000);
 
-
-new Vue({
-	el: '#preloader',
-	router,
-	template: '<Loading/>',
-	  components: { Loading }
-  })

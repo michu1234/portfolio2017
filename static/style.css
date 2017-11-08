@@ -1,0 +1,287 @@
+body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .background {
+      background-color: #fff;
+      text-align: center;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      z-index: 100;
+      animation: displayanimation 5s forwards;
+    }
+  
+    @keyframes displayanimation {
+        0% {
+            opacity: 0;
+        }
+        10% {
+          opacity: 1;
+      }
+        95% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+  
+    .rhino {
+      transform: scale(.2);
+      position: relative;
+      display: inline-block;
+      text-align: left;
+      margin: 20vh auto;
+      width: 31.25vmax;
+      height: 31.25vmax;
+      border-radius: 50%;
+      background: -webkit-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+      background: linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+      background-clip: padding-box;
+    }
+  
+    .rhino .head {
+      position: absolute;
+      border-radius: 60% 60% 50% 50% / 40% 40% 70% 70%;
+      width: 20vmax;
+      height: 20vmax;
+      left: 5.625vmax;
+      top: 2.188vmax;
+      border-radius: 50%;
+      background-color: lightgray;
+    }
+  
+    .rhino .head:before,
+    .rhino .head:after {
+      /* Eye */
+      position: absolute;
+      content: "";
+      z-index: 1;
+      width: 1.25vmax;
+      height: 2.5vmax;
+      top: 12.188vmax;
+      border-radius: 50%;
+      background-color: #fff;
+      -webkit-animation: blink 6s linear infinite;
+      animation: blink 6s linear infinite;
+    }
+  
+    .rhino .head:before {
+      left: 3.75vmax;
+    }
+  
+    .rhino .head:after {
+      right: 3.75vmax;
+    }
+  
+    .rhino .head .headbottom {
+      position: absolute;
+      width: 13.125vmax;
+      height: 13.125vmax;
+      top: 15.25vmax;
+      left: 3.438vmax;
+      border-radius: 50%;
+      background-color: lightgray;
+    }
+  
+    .rhino .head .headbottom:before,
+    .rhino .head .headbottom:after {
+      position: absolute;
+      content: "";
+      width: 6.25vmax;
+      height: 10.625vmax;
+      top: -3.125vmax;
+      background-color: lightgray;
+    }
+  
+    .rhino .head .headbottom:before {
+      left: -1.5vmax;
+      -webkit-transform: rotate(-17deg);
+      transform: rotate(-17deg);
+    }
+  
+    .rhino .head .headbottom:after {
+      right: -1.5vmax;
+      -webkit-transform: rotate(17deg);
+      transform: rotate(17deg);
+    }
+  
+    .rhino .head .headbottom .horn {
+      position: absolute;
+      z-index: 2;
+      width: 6.625vmax;
+      height: 18.75vmax;
+      left: 3.25vmax;
+      bottom: 6.25vmax;
+      border-radius: 80%;
+      border-radius: 5vmax / 25vmax 25vmax 20% 20%;
+      background-color: #fff;
+      -webkit-transform: skewZ(60deg);
+      transform: skewZ(60deg);
+    }
+  
+    .rhino .head .ears {
+      position: absolute;
+      width: 100%;
+    }
+  
+    .rhino .head .ears:before,
+    .rhino .head .ears:after {
+      position: absolute;
+      content: "";
+      width: 8.75vmax;
+      height: 3.75vmax;
+      background-color: lightgray;
+      top: 5vmax;
+      -webkit-animation: none 6s linear infinite;
+      animation: none 6s linear infinite;
+    }
+  
+    .rhino .head .ears:before {
+      -webkit-transform-origin: center left;
+      transform-origin: center left;
+      left: -.05vmax;
+      border-radius: 8.75vmax 8.75vmax 0 2.188vmax / 4.375vmax 6.25vmax 0 2.188vmax;
+      -webkit-transform: rotateZ(-130deg);
+      transform: rotateZ(-130deg);
+      -webkit-animation-name: ear-left;
+      animation-name: ear-left;
+    }
+  
+    .rhino .head .ears:after {
+      -webkit-transform-origin: center right;
+      transform-origin: center right;
+      right: -.05vmax;
+      border-radius: 8.75vmax 8.75vmax 2.188vmax 0 / 6.25vmax 4.375vmax 2.188vmax 0;
+      -webkit-transform: rotate(130deg);
+      transform: rotate(130deg);
+      -webkit-animation-name: ear-right;
+      animation-name: ear-right;
+    }
+  
+    @-webkit-keyframes blink {
+      0%,
+      59%,
+      61%,
+      79%,
+      81%,
+      86%,
+      88%,
+      100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+      }
+      60%,
+      80%,
+      87% {
+        -webkit-transform: scaleY(0.3);
+        transform: scaleY(0.3);
+      }
+    }
+  
+    @keyframes blink {
+      0%,
+      59%,
+      61%,
+      79%,
+      81%,
+      86%,
+      88%,
+      100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+      }
+      60%,
+      80%,
+      87% {
+        -webkit-transform: scaleY(0.3);
+        transform: scaleY(0.3);
+      }
+    }
+  
+    @-webkit-keyframes ear-left {
+      0%,
+      29%,
+      31%,
+      33%,
+      35%,
+      37%,
+      100% {
+        -webkit-transform: rotateZ(-130deg);
+        transform: rotateZ(-130deg);
+      }
+      30%,
+      32%,
+      34%,
+      36% {
+        -webkit-transform: rotateZ(-145deg);
+        transform: rotateZ(-145deg);
+      }
+    }
+  
+    @keyframes ear-left {
+      0%,
+      29%,
+      31%,
+      33%,
+      35%,
+      37%,
+      100% {
+        -webkit-transform: rotateZ(-130deg);
+        transform: rotateZ(-130deg);
+      }
+      30%,
+      32%,
+      34%,
+      36% {
+        -webkit-transform: rotateZ(-145deg);
+        transform: rotateZ(-145deg);
+      }
+    }
+  
+    @-webkit-keyframes ear-right {
+      0%,
+      29%,
+      31%,
+      33%,
+      35%,
+      37%,
+      100% {
+        -webkit-transform: rotateZ(130deg);
+        transform: rotateZ(130deg);
+      }
+      30%,
+      32%,
+      34%,
+      36% {
+        -webkit-transform: rotateZ(145deg);
+        transform: rotateZ(145deg);
+      }
+    }
+  
+    @keyframes ear-right {
+      0%,
+      29%,
+      31%,
+      33%,
+      35%,
+      37%,
+      100% {
+        -webkit-transform: rotateZ(130deg);
+        transform: rotateZ(130deg);
+      }
+      30%,
+      32%,
+      34%,
+      36% {
+        -webkit-transform: rotateZ(145deg);
+        transform: rotateZ(145deg);
+      }
+    }
+      
