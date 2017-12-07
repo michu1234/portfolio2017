@@ -6,7 +6,7 @@
     <v-card v-if="onoff == 1">
       <v-card-row class="pink darken-4" light>
         <v-card-title>
-          <span class="white--text">Informator</span>
+          <span class="white--text">GlutenFree App</span>
           <v-spacer></v-spacer>
           <v-menu id="space" bottom left origin="top right" transition="v-scale-transition">
             <v-btn icon="icon" slot="activator" class="white--text">
@@ -27,19 +27,19 @@
           </v-menu>
         </v-card-title>
       </v-card-row>
-      <v-card-row class="gallery__image" img="http://davedeveloper.eu/img/info.JPG" height="350px"></v-card-row>
+      <v-card-row class="gallery__image" img="http://davedeveloper.eu/img/recipes.jpg" height="350px"></v-card-row>
       <v-card-text class="pink darken-4 white--text">
         <div v-text="card_text"></div>
         <div v-text="divider"></div>
         <div v-text="technologies"></div>
       </v-card-text>
       <v-card-row actions class="pink darken-3 mt-0">
-        <a href="http://info.davedeveloper.eu" target="_blank">
+        <a href="http://glutenfree.davedeveloper.eu" target="_blank">
           <v-btn flat class="white--text">
             <v-icon>input</v-icon>&nbsp; DEMO</v-btn>
         </a>
         <v-spacer></v-spacer>
-        <a href="https://github.com/michu1234/krs-regon" target="_blank">
+        <a href="https://github.com/michu1234/glutenFreeApp" target="_blank">
           <v-btn icon>
             <v-icon class="white--text">explore</v-icon>
             <i class="icon-github-circled"></i>
@@ -58,9 +58,9 @@
     props: ['onoff'],
     data() {
       return {
-        card_text: 'Aplikacja wykorzystująca publiczne API, na podstawie którego wyszukuje informacje na temat polskich firm: adres, nazwa firmy, numery KRS, REGON.',
+        card_text: 'Aplikacja gromadzi przepisy oraz produkty bezglutenowe, a wszystkie informacje zapisuje do bazy Firebase. Dodatkowo automatycznie wyszukuje zdjęcia i dodaje do przepisu.',
         divider: '-----------------------',
-        technologies: 'Technologie: HTML5, CSS3, JavaScript, Vue.js, AJAX'
+        technologies: 'Technologie: HTML5, CSS3, JavaScript, Vue.js, AJAX, Firebase, Vuetify'
       }
     },
     methods: {

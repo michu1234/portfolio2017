@@ -172,10 +172,10 @@
         items: [{
           heading: 'Apps'
         }, {
-          icon: 'lightbulb_outline',
-          text: 'Informator'
+          icon: 'room_service',
+          text: 'GlutenFree App'
         }, {
-          icon: 'touch_app',
+          icon: 'business_center',
           text: 'JobBoard'
         }, {
           divider: true
@@ -237,7 +237,7 @@
         e.target.textContent == "format_paint" ? this.onoff_gallery11 = 11 : this.onoff_gallery11 = 0;
       },
       onoff_gallery22: function (e) {
-        e.target.textContent == " Informator " ? this.onoff_gallery1 = 1 : this.onoff_gallery1 = 0;
+        e.target.textContent == " GlutenFree App " ? this.onoff_gallery1 = 1 : this.onoff_gallery1 = 0;
         e.target.textContent == " JobBoard " ? this.onoff_gallery2 = 2 : this.onoff_gallery2 = 0;
         e.target.textContent == " Dev Portfolio " ? this.onoff_gallery3 = 3 : this.onoff_gallery3 = 0;
         e.target.textContent == " Dental Clinic " ? this.onoff_gallery4 = 4 : this.onoff_gallery4 = 0;
